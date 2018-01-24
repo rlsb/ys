@@ -28,7 +28,7 @@ table
   <div >
     <form action="first"  >
    <table border=0 style="width:500;height:30;margin-top:1%;margin-left:7%"  align="left">
-   <tr> <td><input type="checkbox"name="box" value="1" >1.我喜欢把一件事情做完后再做另一件事</td></tr>
+   <tr> <td><input type="checkbox"name="box" value="1" >1.我喜欢一件事情做完后再做另一件事</td></tr>
    <tr> <td><input type="checkbox" name="box" value="2">2.在工作中我喜欢独自筹划，不愿受别人干涉</td> </tr>
    <tr> <td><input type="checkbox" name="box" value="3">3.在集体讨论中，我往往保持沉默</td> </tr>
    <tr> <td><input type="checkbox" name="box" value="4">4.我喜欢做戏剧、 音乐、 歌舞、 新闻采访等方面的工作</td> </tr>
