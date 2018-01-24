@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 table 
   {   border-collapse:   separate;   border-spacing:   10px;   } 
 </style> 
-  <body style="background-image: url(images/1.jpg);background-size:100% 100%" >
+  <body style="background-image: url(images/1.jpg);background-size:100% 100%" text="white">
   <div >
     <form action="first"  >
    <table border=0 style="width:500;height:30;margin-top:1%;margin-left:7%"  align="left">
