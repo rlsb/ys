@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="default" extends="struts-default">
+		<action name="LoginAction" class="loginAction">
+			
+			
+			<result name="success" >/school.jsp</result>
+			<result name="error">/test.jsp</result>
+		</action>
+		<action name="getList" class="GlygetList" method="getList">
+			<result name="success">/success.jsp</result>
+		</action>
+		<action name="selectAdmin" class="glySelect" method="fromGlyUsername">
+		<result name="success" type="chain">getList</result>
+		</action>
+		<action name="glyaction" class="glyaction"  method= "addJs">
+			<result name="success" type="chain">getList</result>
+		</action>
+		<action name="glyInfo" class="GlyInfo" method="glyInfo">
+			<result name="success" type="chain">getList</result>
+		</action>
+		<action name="deleteGly" class="DeleteGly" method="deleteGly">
+			<result name="success">/success.jsp</result>
+		</action>
+		<action name="updateGlyView" class="UpdateGlyView" method="updateGlyView">
+			<result name="success">/updateGlyView.jsp</result>
+		</action>
+		<action name="updateGly" class="UpdateGly" method="updateGly">
+			<result name="success" type="chain">getList</result>
+		</action>
+	</package>
+</struts>    

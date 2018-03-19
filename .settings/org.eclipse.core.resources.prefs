@@ -1,5 +1,2 @@
 eclipse.preferences.version=1
-encoding//WebRoot/index.jsp=UTF-8
-encoding//WebRoot/second.jsp=UTF-8
-encoding//WebRoot/success.jsp=UTF-8
-encoding//WebRoot/third.jsp=UTF-8
+encoding//WebRoot/js/echarts.js=UTF-8
