@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@	taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -47,8 +48,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	</div>
     	
     		<div id="top"> 
-            	<img src="image/admin.png" >
-            	<p onclick="admin()">admin</p>
+    		<s:property value="#gly.username"/>
+            	<a href="glyInfo"><img src="image/admin.png" ></a>
+            	
+ 					
+            	<!-- <p onclick="admin()">admin</p> -->
             </div>
     </div>
   </body>

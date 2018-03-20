@@ -16,7 +16,7 @@ public class GlyAction extends ActionSupport{
 	private Glyxx gly;
 	private GlyService glyService;
 	private String adminName;
-	//关于查询
+	//关于管理员查询
 	public String getAdminName() {
 		return adminName;
 	}
@@ -81,7 +81,10 @@ public class GlyAction extends ActionSupport{
 			list1.add("按照所选学院查询");
 			return SUCCESS;
 		}
-
+		
+	//关于专业查询
+	
+	
 	//关于增加	
 	public String addJs() throws Exception{
 		Glyxx stu = new Glyxx();
@@ -92,6 +95,7 @@ public class GlyAction extends ActionSupport{
 		glyService.save(stu);
 		return SUCCESS;
 	}
+	
 	
 	//查询管理员所有信息
 	public String glyInfo() throws Exception{

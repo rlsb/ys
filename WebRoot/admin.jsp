@@ -8,12 +8,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
- 
-    <base href="<%=basePath%>">
-     
-    <title>管理员信息管理</title>
-    <link rel="stylesheet" type="text/css" href="css/admin.css">
-	<script type="text/javascript"> 
+  	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+    <script type="text/javascript"> 
 
 		function show(){
 			var obj = document.getElementById("pic");
@@ -44,59 +43,46 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         function jichu() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("chance").innerHTML="<iframe src='index.jsp'   height=100% width=100%></iframe>";
+	    document.getElementById("all").innerHTML="<iframe src='index.jsp'   height=100% width=100%></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 	    function guanli() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("chance").innerHTML="<iframe src='getList.action'   height=100% width=100%></iframe>";
+	    window.getElementById("all").innerHTML="<iframe src='getList.action'   height=100% width=100%></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
+	    
 </script>
 
   </head>
   
-  <body bgcolor="ededed">
-   	
-    <div id="all">
-    <div id="allcontent">
-    <div id="left">
+  <body>
+     <div id="all">
+    	<div id="left">
     		<img src="image/admin.png" >
     		<p>maomao</p>
-       	<input type="text" name="gly.username" value="<s:property value="#gly.username"/>"/>
-       	<input type="text" name="gly.password" value="<s:property value="#gly.password"/>"/>	
+       	<s:textfield  size="20" name="login.username" cssStyle="width:130spx;height:30px;"/>
+	    <s:password  name="login.password" type="text" cssStyle="width:130spx;height:30px;"/>	
         <div id="top"> 
         	<a href="school.jsp" style="top:10px">返回首页</a>
         		
             	<!-- <p onclick="admin()">admin</p> -->
         </div>
-      </div>
-    <div id="content">
-    <div id="ThreeButton" >
-        <input type="button" value=基础信息管理   onclick="jichu()">&nbsp  &nbsp
-        <input type="button" value=管理员管理     onclick="guanli()" style="color: #1890ff">&nbsp  &nbsp
-        <input type="button" value=考勤时间段设置  onclick="">
-    </div>
-  	<div id="chance">
-  		
-  	 <!-- <input type="button" value="切换界面" onclick="refreshTime() "> -->
-  		<input type="button" value="添加用户" onclick="show()"> 
-		<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
-		</div>
-		<button><a href="glyInfo" id="aa">查询</a></button>
-  	
-         <s:form  action="selectAdmin"  method="post" >
-		    <s:select   
-		     		name="listName"       
-		            label="选择查询方式"
-		            list="list1"             
-		            />		           
-				<s:textfield name="adminName"></s:textfield>
-		  		<s:submit value="确定"/>
-		   </s:form>    
-        
-		<div id="form">
+        <div id="content">
+        	<div id="ThreeButton" >
+        		<input type="button" value=基础信息管理   onclick="jichu()">&nbsp  &nbsp
+        		<input type="button" value=管理员管理     onclick="guanli()">&nbsp  &nbsp
+        		<input type="button" value=考勤时间段设置  onclick="">
+    		</div>
+    		<div id="chance">
+  	 			
+  				<input type="button" value="添加用户" onclick="show()"> 
+				<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
+				</div>
+				<button><a href="glyInfo" id="aa">查询</a></button>
+  			</div>
+  			<div id="form">
 			<table border="1" cellpadding="8" cellspacing="1" width="700">
 				<tr align="center" bgcolor="silver">
 					<th>账号</th><th>所属学院</th><th>密码</th><th>操作</th><th>操作</th>
@@ -128,11 +114,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</tr>
 			</table>
 		</div>
-		</div>
-	</div>
-</div>
-</div>
+		   
+  			
+        </div>
+    		
+    </div>
+    </div>
   </body>
+  <style type="text/css">
+  	#chance{
+  		width:700px;
+  		height:auto;
+  		margin:10px 250px;
+  	}
+  	#aa{
+  		text-decoration:none;
+  		color:#000;
+  	}
+  	#form{
+  		width:10px;
+  		height:auto;
+  		margin:30px 250px;
+  		box-shadow: 10px 10px 5px #888888;
+  		
+  	}
+  	#form table,th,tr{
+		border: 1px solid white;	
+	}
+  	 
+  	
   
-  
+  </style>
 </html>

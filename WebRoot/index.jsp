@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -10,19 +10,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>My JSP 'index.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+    <script type="text/javascript"> 
+	 function jichu() 
+	{ 	//window.location.reload();
+	    //var dateObj = new Date(); 
+	    document.getElementById("content").innerHTML="<iframe src='college.jsp'   height=100% width=100%></iframe>";
+		//time.innerHTML = hello; //刷新div里面的内容 	
+	} 
+	    function guanli() 
+	{ 	//window.location.reload();
+	    //var dateObj = new Date(); 
+	    document.getElementById("chance").innerHTML="<iframe src='getList.action'   height=100% width=100%></iframe>";
+		//time.innerHTML = hello; //刷新div里面的内容 	
+	} 
+	</script>
   </head>
   
   <body>
-    This is my JSP page. <br>
+    <div id="ThreeButton" >
+        <input type="button" value=学院  onclick="jichu()">&nbsp  &nbsp
+        <input type="button" value=专业    onclick="guanli()" >&nbsp  &nbsp
+        <input type="button" value=班级  onclick="">&nbsp  &nbsp
+        <input type="button" value=课程  onclick="">
+    </div>
+    <div id="content">
+    	
+    </div>
   </body>
+  <style>
+  	#content{
+		margin-top: 10px;
+	}
+  </style>
 </html>

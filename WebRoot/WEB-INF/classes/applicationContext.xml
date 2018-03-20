@@ -37,7 +37,10 @@
 		<property name="mappingResources">
 			<list>
 				<value>org/model/Login.hbm.xml</value>
-				<value>org/model/Glyxx.hbm.xml</value></list>
+				<value>org/model/Glyxx.hbm.xml</value>
+				<value>org/model/Jsxx.hbm.xml</value>
+				<value>org/model/Xyxx.hbm.xml</value>
+				<value>org/model/Zyxx.hbm.xml</value></list>
 		</property>
 	</bean>
 	<bean id="transactionManager"
@@ -71,6 +74,7 @@
 			<list>
 				<value>LoginService</value>
 				<value>glyService</value>
+				<value>colService</value>
 			</list>
 			<!--   此处可增加其他需要自动创建事务代理的bean-->
 		</property>
@@ -140,6 +144,50 @@
 	<bean id="UpdateGly" class="org.action.GlyAction">
 		<property name="glyService">
 			<ref bean="glyService"/>
+		</property></bean>
+	<!-- 关于Xy -->
+	<bean id="xyaction" class="org.action.ColAction">
+		<property name="colService">
+			<ref bean="colService"/>
+		</property>
+	</bean>
+	<bean id="colService" class="org.service.imp.ColManage">
+		<property name="xyDao">
+			<ref bean="xy"/>
+		</property>
+	</bean>
+	<bean id="xy" class="org.dao.imp.CollegeImp">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="xySelect" class="org.action.ColAction">
+		<property name="colService">
+			<ref bean="colService"/>
+		</property>
+	</bean>
+	<bean id="XygetList" class="org.action.ColAction">
+	</bean>
+
+	<bean id="XyInfo" class="org.action.ColAction">
+		<property name="colService">
+			<ref bean="colService"/>
+		</property></bean>
+		
+	<bean id="DeleteXy" class="org.action.ColAction">
+		<property name="colService">
+			<ref bean="colService"/>
+		</property></bean>
+		
+	<bean id="UpdateXyView" class="org.action.ColAction">
+		<property name="colService">
+			<ref bean="colService"/>
+		</property></bean>
+		
+	<bean id="UpdateXy" class="org.action.ColAction">
+		<property name="colService">
+			<ref bean="colService"/>
 		</property></bean>
 	
 	</beans>
