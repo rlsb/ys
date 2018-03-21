@@ -26,14 +26,17 @@ public class ColAction extends ActionSupport{
 	private ColService colService;
 	private String proName;
 	//关于管理员查询
+		
+	
+		private List<String> list2;
+
 		public String getProName() {
 			return proName;
 		}
 		public void setProName(String proName) {
 			this.proName = proName;
 		}
-		private List<String> list2;
-		
+
 		private List<String> listName1;
 		
 		public List<String> getList2() {
@@ -63,7 +66,7 @@ public class ColAction extends ActionSupport{
 			System.out.println(listName1.get(0)+" "+proName);
 			if (listName1.get(0).equals("按照编号查询")) {
 				System.out.println("按照编号查询");
-				 user=colService.find(proName);
+				 user=colService.find(Integer.parseInt(proName));
 				 Map request = (Map)ActionContext.getContext().get("request");
 				Pager page = new Pager(getPageNow(), colService.findXySize());
 				System.out.println(page.getPageNow()+" page");
@@ -73,7 +76,7 @@ public class ColAction extends ActionSupport{
 				}else
 					return ERROR;
 			}else if(listName1.get(0).equals("按照所选学院查询")){
-				List list = colService.findCollege(proName, pageNow, pageSize);
+				List list = colService.findCollege(Integer.parseInt(proName), pageNow, pageSize);
 				Map request = (Map)ActionContext.getContext().get("request");
 				Pager page = new Pager(getPageNow(), colService.findXySize());
 				System.out.println(page.getPageNow()+" page");
@@ -87,7 +90,7 @@ public class ColAction extends ActionSupport{
 			  else	
 				return ERROR;
 		}
-		public  String getList1() throws Exception  {
+		public  String getAllList() throws Exception  {
 			// TODO Auto-generated method stub
 			list2=new ArrayList<String>();
 			list2.add("按照编号查询");
@@ -99,9 +102,9 @@ public class ColAction extends ActionSupport{
 	public String addXy() throws Exception{
 		Xyxx stu = new Xyxx();
 		stu.setFacultyid(xy.getFacultyid());
-		stu.setFacultyname(xy.getFacultyname());
+		stu.setFacultyName(xy.getFacultyName());
 		stu.setSchoolid(xy.getSchoolid());
-		System.out.println(xy.getFacultyid()+" "+xy.getFacultyname());
+		System.out.println(xy.getFacultyid()+" "+xy.getFacultyName());
 		colService.save(stu);
 		return SUCCESS;
 	}
@@ -120,22 +123,22 @@ public class ColAction extends ActionSupport{
 	} 
 	//关于删除
 	public String deleteXy() throws Exception{
-		String facultyname = xy.getFacultyname();
-		colService.delete(facultyname);
+		Integer facultyid = xy.getFacultyid();
+		colService.delete(facultyid);
 		return SUCCESS;
 	}
 	//显示修改页面
 	public String updateXyView() throws Exception{
-		String facultyname = xy.getFacultyname();
-		Xyxx xyInfo = colService.find(facultyname);
+		Integer facultyid = xy.getFacultyid();
+		Xyxx xyInfo = colService.find(facultyid);
 		Map request = (Map)ActionContext.getContext().get("request");
 		request.put("xyInfo", xyInfo);
 		return SUCCESS;
 	}
 	//执行修改操作
-	public String updateGly() throws Exception{
-		Xyxx xy1 = colService.find(xy.getFacultyname());
-		xy1.setFacultyid(xy.getFacultyid());
+	public String updateXy() throws Exception{
+		Xyxx xy1 = colService.find(xy.getFacultyid());
+		xy1.setFacultyName(xy.getFacultyName());;
 		xy1.setSchoolid(xy.getSchoolid());
 		Map request = (Map)ActionContext.getContext().get("request");
 		colService.update(xy1);

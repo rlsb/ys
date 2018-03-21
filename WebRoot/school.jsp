@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    function admin() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("context").innerHTML="<iframe src='getList.action'   height=100% width=100%></iframe>";
+	    document.getElementById("context").innerHTML="<iframe src='success.jsp'   height=100% width=100%></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 	</script>
@@ -48,11 +48,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	</div>
     	
     		<div id="top"> 
-    		<s:property value="#gly.username"/>
-            	<a href="glyInfo"><img src="image/admin.png" ></a>
-            	
- 					
+    			<div id="right">
+            		<a href="glyInfo"><img src="image/admin.png" ></a>
+ 					<s:property value="login.username" />	
             	<!-- <p onclick="admin()">admin</p> -->
+            	</div>
             </div>
     </div>
   </body>

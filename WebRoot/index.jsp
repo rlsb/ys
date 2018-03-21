@@ -14,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 function jichu() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("content").innerHTML="<iframe src='college.jsp'   height=100% width=100%></iframe>";
+	    document.getElementById("content").innerHTML="<iframe src='getAllList.action'   height=100% width=100%></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 	    function guanli() 
@@ -27,6 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <div id="all">
     <div id="ThreeButton" >
         <input type="button" value=学院  onclick="jichu()">&nbsp  &nbsp
         <input type="button" value=专业    onclick="guanli()" >&nbsp  &nbsp
@@ -36,8 +37,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="content">
     	
     </div>
+  </div>
   </body>
-  <style>
+ 	<style type="text/css">
   	#content{
 		margin-top: 10px;
 	}

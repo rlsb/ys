@@ -11,7 +11,7 @@ public class ColManage implements ColService{
 	private CollegeDao xyDao;
 
 	// 查询
-	public Xyxx find(String xy) {
+	public Xyxx find(Integer xy) {
 		return xyDao.find(xy);
 	}
 	//增加学院
@@ -40,9 +40,9 @@ public class ColManage implements ColService{
 		this.xyDao = xyDao;
 	}
 	@Override
-	public void delete(String username) {
+	public void delete(Integer facultyid) {
 		// TODO Auto-generated method stub
-		xyDao.delete(username);
+		xyDao.delete(facultyid);
 	}
 	@Override
 	public void update(Xyxx xy) {
@@ -50,7 +50,7 @@ public class ColManage implements ColService{
 		xyDao.update(xy);
 	}
 	@Override
-	public List findCollege(String xy,int pageNow,int pageSize) {
+	public List findCollege(Integer xy,int pageNow,int pageSize) {
 		// TODO Auto-generated method stub
 		return xyDao.findCollege(xy,pageNow,pageSize);
 	}

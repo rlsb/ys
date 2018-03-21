@@ -31,26 +31,26 @@
 		</action>
 		
 		<!-- 关于Xy -->
-		<action name="getList1" class="XygetList" method="getList1">
+		<action name="getAllList" class="XygetList" method="getAllList">
 			<result name="success">/college.jsp</result>
 		</action>
 		<action name="proAdmin" class="xySelect" method="fromXyUsername">
-		<result name="success" type="chain">getList1</result>
+		<result name="success" type="chain">getAllList</result>
 		</action>
 		<action name="xyaction" class="xyaction"  method= "addXy">
-			<result name="success" type="chain">getList1</result>
+			<result name="success" type="chain">getAllList</result>
 		</action>
 		<action name="xyInfo" class="XyInfo" method="XyInfo">
-			<result name="success" type="chain">getList1</result>
+			<result name="success" type="chain">getAllList</result>
 		</action>
 		<action name="deleteXy" class="DeleteXy" method="deleteXy">
-			<result name="success" type="chain">getList1</result>
+			<result name="success" type="chain">getAllList</result>
 		</action>
 		<action name="updateXyView" class="UpdateXyView" method="updateXyView">
 			<result name="success">/updateXyView.jsp</result>
 		</action>
 		<action name="updateXy" class="UpdateXy" method="updateXy">
-			<result name="success" type="chain">getList1</result>
+			<result name="success" type="chain">getAllList</result>
 		</action>
 	</package>
 </struts>    

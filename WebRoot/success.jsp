@@ -67,15 +67,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        	<input type="text" name="gly.username" value="<s:property value="#gly.username"/>"/>
        	<input type="text" name="gly.password" value="<s:property value="#gly.password"/>"/>	
         <div id="top"> 
-        	<a href="school.jsp" style="top:10px">返回首页</a>
-        		
+        	<div id="right">
+        		<a href="school.jsp">返回首页</a>
             	<!-- <p onclick="admin()">admin</p> -->
+            </div>
         </div>
       </div>
     <div id="content">
     <div id="ThreeButton" >
         <input type="button" value=基础信息管理   onclick="jichu()">&nbsp  &nbsp
-        <input type="button" value=管理员管理     onclick="guanli()" style="color: #1890ff">&nbsp  &nbsp
+        <input type="button" value=管理员管理     onclick="guanli()">&nbsp  &nbsp
         <input type="button" value=考勤时间段设置  onclick="">
     </div>
   	<div id="chance">

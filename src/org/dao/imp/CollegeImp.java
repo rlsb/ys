@@ -23,18 +23,18 @@ public class CollegeImp extends HibernateDaoSupport implements CollegeDao{
 			}
 		}
 		//查
-		public Xyxx find(String xy) {
+		public Xyxx find(Integer xy) {
 			// TODO Auto-generated method stub		
 			Session session = getHibernateTemplate().getSessionFactory().openSession();
 			Transaction ts = session.beginTransaction();
 			System.out.println("1111111");
-			Query query=session.createQuery("from Xyxx where facultyname=?");
+			Query query=session.createQuery("from Xyxx where facultyid=?");
 			query.setParameter(0, xy);
 			Xyxx gl=(Xyxx) query.uniqueResult();
 			query.setMaxResults(1);
 			ts.commit();
 			session.close();
-			System.out.println(gl.getFacultyname());
+			
 			return gl;
 		}
 		//查所有
@@ -44,7 +44,7 @@ public class CollegeImp extends HibernateDaoSupport implements CollegeDao{
 			try{
 				Session session = getHibernateTemplate().getSessionFactory().openSession();
 				Transaction ts = session.beginTransaction();
-				Query query = session.createQuery("from Xyxx order by facultyname");
+				Query query = session.createQuery("from Xyxx order by facultyid");
 				int firstResult = (pageNow-1)*pageSize;
 				query.setFirstResult(firstResult);
 				query.setMaxResults(pageSize);
@@ -73,13 +73,13 @@ public class CollegeImp extends HibernateDaoSupport implements CollegeDao{
 		}
 		//删
 		@Override
-		public void delete(String facultyname) {
+		public void delete(Integer facultyid) {
 			// TODO Auto-generated method stub
 			try{
 				Session session =getHibernateTemplate().getSessionFactory().openSession();
 				Transaction ts = session.beginTransaction();
-				Xyxx zy = find(facultyname);
-				session.delete(zy);
+				Xyxx xy = find(facultyid);
+				session.delete(xy);
 				ts.commit();
 				session.close();
 			}catch(Exception e){
@@ -99,7 +99,7 @@ public class CollegeImp extends HibernateDaoSupport implements CollegeDao{
 				e.printStackTrace();
 			}
 		}
-		public List findCollege(String xy,int pageNow,int pageSize) {
+		public List findCollege(Integer xy,int pageNow,int pageSize) {
 			// TODO Auto-generated method stub
 			try{
 				Session session = getHibernateTemplate().getSessionFactory().openSession();
@@ -119,4 +119,5 @@ public class CollegeImp extends HibernateDaoSupport implements CollegeDao{
 				return null;
 			}
 		}
+		
 }

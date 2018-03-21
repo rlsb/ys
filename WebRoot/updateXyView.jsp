@@ -25,8 +25,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body >
   <div id="text">
-  		<s:set name="gly" value="#request.glyInfo"></s:set>
-    	<s:form action="updateGly" method="post" enctype="multipart/form-data">
+  		<s:set name="xy" value="#request.xyInfo"></s:set>
+    	<s:form action="updateXy" method="post" enctype="multipart/form-data">
     	<table border="0" cellspacing="1" cellpadding="8" width="500">
     	<tr>
     			<td width="80">编号：</td>
@@ -37,19 +37,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<tr>
     			<td width="80">学院：</td>
     			<td>
-    				<input type="text" name="xy.facultyname" value="<s:property value="#xy.facultyname"/>"/>
+    				<input type="text" name="xy.facultyName" value="<s:property value="#xy.facultyName"/>"/>
     			</td>
     		</tr>
     		<tr>
     			<td width="80">学校：</td>
     			<td>
     				<input type="password" name="xy.schoolid" value="<s:property value="#xy.schoolid"/>"/>
-    			</td>
-    		</tr>
-    		<tr>
-    			<td width="80">所属学院：</td>
-    			<td>
-    				<input type="text" name="gly.facultyName" value="<s:property value="#gly.facultyName"/>"/>
     			</td>
     		</tr>
     	</table>

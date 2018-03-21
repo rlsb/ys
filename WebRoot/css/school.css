@@ -61,16 +61,12 @@ body{
 	width:86%;
 	background-color: #ffffff;
 }
-#top img{
-	position:fixed;
+#right{
+	position: fixed;
 	right:150px;
 	top:15px;
 }
-#top p{
-	position:fixed;
-	right:100px;
-	top:15px;
-}
+
 #ThreeButton{
 	position:fixed;
 	top:70px;

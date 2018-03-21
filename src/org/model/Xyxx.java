@@ -9,7 +9,7 @@ public class Xyxx implements java.io.Serializable {
 	// Fields
 
 	private Integer facultyid;
-	private String facultyname;
+	private String facultyName;
 	private Integer schoolid;
 	private String flag;
 
@@ -25,8 +25,8 @@ public class Xyxx implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Xyxx(String facultyname, Integer schoolid, String flag) {
-		this.facultyname = facultyname;
+	public Xyxx(String facultyName, Integer schoolid, String flag) {
+		this.facultyName = facultyName;
 		this.schoolid = schoolid;
 		this.flag = flag;
 	}
@@ -41,12 +41,12 @@ public class Xyxx implements java.io.Serializable {
 		this.facultyid = facultyid;
 	}
 
-	public String getFacultyname() {
-		return this.facultyname;
+	public String getFacultyName() {
+		return this.facultyName;
 	}
 
-	public void setFacultyname(String facultyname) {
-		this.facultyname = facultyname;
+	public void setFacultyName(String facultyName) {
+		this.facultyName = facultyName;
 	}
 
 	public Integer getSchoolid() {

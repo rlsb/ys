@@ -8,10 +8,10 @@
     <class name="org.model.Xyxx" table="xyxx" catalog="yunshi">
         <id name="facultyid" type="java.lang.Integer">
             <column name="facultyid" />
-            <generator class="native" />
+            <generator class="assigned" />
         </id>
-        <property name="facultyname" type="java.lang.String">
-            <column name="facultyname" length="50" />
+        <property name="facultyName" type="java.lang.String">
+            <column name="facultyName" length="50" />
         </property>
         <property name="schoolid" type="java.lang.Integer">
             <column name="schoolid" not-null="true" />

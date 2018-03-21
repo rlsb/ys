@@ -11,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/admin.css">
+	<link rel="stylesheet" type="text/css" href="css/school.css">
     <script type="text/javascript"> 
 
 		function show(){
@@ -43,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         function jichu() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("all").innerHTML="<iframe src='index.jsp'   height=100% width=100%></iframe>";
+	    document.getElementById("all").innerHTML="<iframe src=''   height=100% width=100%></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 	    function guanli() 
@@ -59,28 +59,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
      <div id="all">
-    	<div id="left">
-    		<img src="image/admin.png" >
-    		<p>maomao</p>
-       	<s:textfield  size="20" name="login.username" cssStyle="width:130spx;height:30px;"/>
-	    <s:password  name="login.password" type="text" cssStyle="width:130spx;height:30px;"/>	
-        <div id="top"> 
-        	<a href="school.jsp" style="top:10px">返回首页</a>
-        		
-            	<!-- <p onclick="admin()">admin</p> -->
-        </div>
+    	
         <div id="content">
-        	<div id="ThreeButton" >
-        		<input type="button" value=基础信息管理   onclick="jichu()">&nbsp  &nbsp
-        		<input type="button" value=管理员管理     onclick="guanli()">&nbsp  &nbsp
-        		<input type="button" value=考勤时间段设置  onclick="">
-    		</div>
     		<div id="chance">
   	 			
   				<input type="button" value="添加用户" onclick="show()"> 
 				<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
 				</div>
 				<button><a href="glyInfo" id="aa">查询</a></button>
+			<%-- 	  <s:form  action="selectAdmin"  method="post" >
+		    <s:select   
+		     		name="listName"       
+		            label="选择查询方式"
+		            list="list1"             
+		            />		           
+				<s:textfield name="adminName"></s:textfield>
+		  		<s:submit value="确定"/>
+		   </s:form>   --%>
   			</div>
   			<div id="form">
 			<table border="1" cellpadding="8" cellspacing="1" width="700">
@@ -118,7 +113,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			
         </div>
     		
-    </div>
     </div>
   </body>
   <style type="text/css">
