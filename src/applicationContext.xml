@@ -13,7 +13,7 @@
 			value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/yunshi">
+			value="jdbc:mysql://localhost:33060/yunshi">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="123456"></property>
@@ -75,6 +75,7 @@
 				<value>LoginService</value>
 				<value>glyService</value>
 				<value>colService</value>
+				<value>proService</value>
 			</list>
 			<!--   此处可增加其他需要自动创建事务代理的bean-->
 		</property>
@@ -189,5 +190,48 @@
 		<property name="colService">
 			<ref bean="colService"/>
 		</property></bean>
+	<!-- 关于Zy -->
+	<bean id="zyaction" class="org.action.ProAction">
+		<property name="proService">
+			<ref bean="proService"/>
+		</property>
+	</bean>
+	<bean id="proService" class="org.service.imp.ProManage">
+		<property name="zyDao">
+			<ref bean="zy"/>
+		</property>
+	</bean>
+	<bean id="zy" class="org.dao.imp.ProfessionImp">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 	
+	<bean id="zySelect" class="org.action.ProAction">
+		<property name="proService">
+			<ref bean="proService"/>
+		</property>
+	</bean>
+	<bean id="ZygetList" class="org.action.ProAction">
+	</bean>
+
+	<bean id="ZyInfo" class="org.action.ProAction">
+		<property name="proService">
+			<ref bean="proService"/>
+		</property></bean>
+		
+	<bean id="DeleteZy" class="org.action.ProAction">
+		<property name="proService">
+			<ref bean="proService"/>
+		</property></bean>
+		
+	<bean id="UpdateZyView" class="org.action.ProAction">
+		<property name="proService">
+			<ref bean="proService"/>
+		</property></bean>
+		
+	<bean id="UpdateZy" class="org.action.ProAction">
+		<property name="proService">
+			<ref bean="proService"/>
+		</property></bean>
 	</beans>

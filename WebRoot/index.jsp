@@ -9,12 +9,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>基础信息管理</title>
     <script type="text/javascript"> 
-	 function jichu() 
+	 function college() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
 	    document.getElementById("content").innerHTML="<iframe src='getAllList.action'   height=100% width=100%></iframe>";
+		//time.innerHTML = hello; //刷新div里面的内容 	
+	} 
+	function profession() 
+	{ 	//window.location.reload();
+	    //var dateObj = new Date(); 
+	    document.getElementById("content").innerHTML="<iframe src='getAllProList.action'   height=100% width=100%></iframe>";
+		//time.innerHTML = hello; //刷新div里面的内容 	
+	} 
+	function classes() 
+	{ 	//window.location.reload();
+	    //var dateObj = new Date(); 
+	    document.getElementById("content").innerHTML="<iframe src='getAllClaList.action'   height=100% width=100%></iframe>";
+		//time.innerHTML = hello; //刷新div里面的内容 	
+	} 
+	function course() 
+	{ 	//window.location.reload();
+	    //var dateObj = new Date(); 
+	    document.getElementById("content").innerHTML="<iframe src='getAllCouList.action'   height=100% width=100%></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 	    function guanli() 
@@ -28,11 +46,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <div id="all">
-    <div id="ThreeButton" >
-        <input type="button" value=学院  onclick="jichu()">&nbsp  &nbsp
-        <input type="button" value=专业    onclick="guanli()" >&nbsp  &nbsp
-        <input type="button" value=班级  onclick="">&nbsp  &nbsp
-        <input type="button" value=课程  onclick="">
+    <div id="FourButton" >
+        <input type="button" value=学院  onclick="college()">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="button" value=专业  onclick="profession()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;
+        <input type="button" value=班级  onclick="classes()">&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value=课程  onclick="course()">
     </div>
     <div id="content">
     	

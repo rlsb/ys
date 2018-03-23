@@ -75,9 +75,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </div>
     <div id="content">
     <div id="ThreeButton" >
-        <input type="button" value=基础信息管理   onclick="jichu()">&nbsp  &nbsp
-        <input type="button" value=管理员管理     onclick="guanli()">&nbsp  &nbsp
-        <input type="button" value=考勤时间段设置  onclick="">
+        <input type="button" value=基础信息管理   onclick="jichu()">&nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="button" value=管理员管理     onclick="guanli()">&nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="button" value=考勤时间段设置  onclick="timeset()">
     </div>
   	<div id="chance">
   		

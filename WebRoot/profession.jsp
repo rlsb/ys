@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>学院</title>
+    <title>专业</title>
     
 	<script type="text/javascript"> 
 
@@ -23,10 +23,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             document.getElementById("pic").style.left=x+250;
             document.getElementById("pic").style.visibility="visible";
            
-            var formDiv="<form action='xyaction' method='post'>";
-            formDiv+="学院编号: <input type='text' name='xy.facultyid' /><br>";
-            formDiv+="学院名称:    <input type='text' name='xy.facultyName' /><br>";
-           	formDiv+="所属学校:   <input type='text' name='xy.schoolid' /><br><br>";     
+            var formDiv="<form action='zyaction' method='post'>";
+            formDiv+="专业编号: <input type='text' name='zy.professionid' /><br>";
+            formDiv+="专业名称:    <input type='text' name='zy.professionname' /><br>";
+           	formDiv+="所属学院编号:   <input type='text' name='zy.facultyid' /><br><br>";     
                formDiv+="<input type='submit' value='提交' /></form>";
             	   formDiv+="<input type='submit' value='取消' onclick='hide()' />";     
             document.getElementById("pic").innerHTML=formDiv;
@@ -43,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	<input type="button" value="添加用户" onclick="show()"> 
 		<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
 		</div>
-		   <button><a href="xyInfo" id="aa">查询</a></button>
+		   <button><a href="zyInfo" id="aa">查询</a></button>
    			<s:form  action="proAdmin"  method="post" >
 		    <s:select   
 		     		name="listName1"       
@@ -57,31 +57,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   <div id="form">
 			<table border="1" cellpadding="8" cellspacing="1" width="700">
 				<tr align="center" bgcolor="silver">
-					<th>账号</th><th>学院名称</th><th>所属学校编号</th><th>操作</th><th>操作</th>
+					<th>专业编号<th>专业名称</th><th>所属学院编号</th><th>操作</th><th>操作</th>
 				</tr>
-				<s:iterator value="#request.list" id="xy">
+				<s:iterator value="#request.list" id="zy">
 					<tr>
-						<td><s:property value="#xy.facultyid"/></td>
-						<td><s:property value="#xy.facultyName"/></td>
-						<td><s:property value="#xy.schoolid"/></td>
-						<td><a href="deleteXy.action?xy.facultyid=<s:property value ="#xy.facultyid"/>" 
-							onClick="if(!confirm('确定删除该生信息吗？'))return false;else return true;">删除</a></td>
-						<td><a href="updateXyView.action?xy.facultyid=<s:property value="#xy.facultyid"/>">修改</a></td>
+						<td><s:property value="#zy.professionid"/></td>
+						<td><s:property value="#zy.professionname"/></td>
+						<td><s:property value="#zy.facultyid"/></td>
+						<td><a href="deleteZy.action?zy.professionid=<s:property value ="#zy.professionid"/>" 
+							onClick="if(!confirm('确定删除该条信息吗？'))return false;else return true;">删除</a></td>
+						<td><a href="updateZyView.action?zy.professionid=<s:property value="#zy.professionid"/>">修改</a></td>
 					</tr>
 				</s:iterator>
 				<tr>
 					<s:set name="page" value="#request.page"></s:set>
 					<s:if test="#page.hasFirst">
-						<s:a href="xyInfo.action?pageNow=1">首页</s:a>
+						<s:a href="zyInfo.action?pageNow=1">首页</s:a>
 					</s:if>
 					<s:if test="#page.hasPre">
-						<a href="xyInfo.action?pageNow=<s:property value="#page.pageNow-1"/>">上一页</a>
+						<a href="zyInfo.action?pageNow=<s:property value="#page.pageNow-1"/>">上一页</a>
 					</s:if>
 					<s:if test="#page.hasNext">
-						<a href="xyInfo.action?pageNow=<s:property value="#page.pageNow+1"/>">下一页</a>
+						<a href="zyInfo.action?pageNow=<s:property value="#page.pageNow+1"/>">下一页</a>
 					</s:if>
 					<s:if test="#page.hasLast">
-						<a href="xyInfo.action?pageNow=<s:property value="#page.totalPage"/>">尾页</a>
+						<a href="zyInfo.action?pageNow=<s:property value="#page.totalPage"/>">尾页</a>
 					</s:if>
 				</tr>
 			</table>

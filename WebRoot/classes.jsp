@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>学院</title>
+    <title>班级</title>
     
 	<script type="text/javascript"> 
 

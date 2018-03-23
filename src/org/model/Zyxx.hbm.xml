@@ -8,7 +8,7 @@
     <class name="org.model.Zyxx" table="zyxx" catalog="yunshi">
         <id name="professionid" type="java.lang.Integer">
             <column name="professionid" />
-            <generator class="native" />
+            <generator class="assigned" />
         </id>
         <property name="professionname" type="java.lang.String">
             <column name="professionname" length="50" />
