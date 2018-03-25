@@ -63,9 +63,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="allcontent">
     <div id="left">
     		<img src="image/admin.png" >
-    		<p>maomao</p>
-       	<input type="text" name="gly.username" value="<s:property value="#gly.username"/>"/>
-       	<input type="text" name="gly.password" value="<s:property value="#gly.password"/>"/>	
+    	<div  class="admin">
+    		<s:property value="#session.user.username" />
+    	</div> 
+    <div id="user">
+    	<p class="word">账号</p>
+	    <div class="username">
+	    	<s:property value="#session.user.username" />
+	    </div>	
+    </div>
+    <div id="pass">
+    	<p class="word">密码</p>
+	    <div class="password">  
+	       	<s:property value="#session.user.password" />	
+	    </div>
+    </div>		
+	    	
         <div id="top"> 
         	<div id="right">
         		<a href="school.jsp">返回首页</a>
@@ -134,6 +147,50 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 </div>
   </body>
-  
+ <style type="text/css">
+ 	.admin{
+ 		font-family:"微软雅黑";
+ 		color:#fff;
+ 		font-size:26px;
+ 		float:right;
+ 		margin-right:110px;
+ 		margin-top:6px;
+ 	}
+ 	#user{
+ 		width:160px;
+ 		hight:50px;
+ 		margin-left:10px;
+ 		margin-top:20px;
+ 	}
+
+ 	.username{
+ 		float:right;
+ 		width:100px;
+ 		hight:50px;
+ 		background-color:#fff;
+ 		border-radius:5px;       /* 圆角 */
+ 		font-family:"微软雅黑";
+ 		color:#000;
+ 		font-size:20px;
+ 		margin-top:30px;
+ 	}
+ 	#pass{
+ 		width:160px;
+ 		hight:50px;
+ 		margin-left:10px;
+ 		margin-top:-20px;
+ 	}
+ 	.password{
+ 		float:right;
+ 		width:100px;
+ 		hight:50px;
+ 		background-color:#fff;
+ 		border-radius:5px;       /* 圆角 */
+ 		font-family:"微软雅黑";
+ 		color:#000;
+ 		font-size:20px;
+ 		margin-top:-40px;
+ 	}
+ </style>
   
 </html>

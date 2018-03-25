@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<div id="top"> 
     			<div id="right">
             		<a href="glyInfo"><img src="image/admin.png" ></a>
- 					<s:property value="login.username" />	
+ 					<s:property value="#session.user.username" />	
             	<!-- <p onclick="admin()">admin</p> -->
             	</div>
             </div>

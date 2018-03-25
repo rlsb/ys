@@ -57,7 +57,7 @@
 		<action name="getAllProList" class="ZygetList" method="getAllProList">
 			<result name="success">/profession.jsp</result>
 		</action>
-		<action name="proAdmin" class="zySelect" method="fromZyUsername">
+		<action name="professionAdmin" class="zySelect" method="fromZyUsername">
 		<result name="success" type="chain">getAllProList</result>
 		</action>
 		<action name="zyaction" class="zyaction"  method= "addZy">
@@ -74,6 +74,52 @@
 		</action>
 		<action name="updateZy" class="UpdateZy" method="updateZy">
 			<result name="success" type="chain">getAllProList</result>
+		</action>
+		
+		<!-- 关于Bj -->
+		<action name="getAllClaList" class="BjgetList" method="getAllClaList">
+			<result name="success">/classes.jsp</result>
+		</action>
+		<action name="classesAdmin" class="bjSelect" method="fromBjUsername">
+		<result name="success" type="chain">getAllClaList</result>
+		</action>
+		<action name="bjaction" class="bjaction"  method= "addBj">
+			<result name="success" type="chain">getAllClaList</result>
+		</action>
+		<action name="bjInfo" class="BjInfo" method="BjInfo">
+			<result name="success" type="chain">getAllClaList</result>
+		</action>
+		<action name="deleteBj" class="DeleteBj" method="deleteBj">
+			<result name="success" type="chain">getAllClaList</result>
+		</action>
+		<action name="updateBjView" class="UpdateBjView" method="updateBjView">
+			<result name="success">/updateBjView.jsp</result>
+		</action>
+		<action name="updateBj" class="UpdateBj" method="updateBj">
+			<result name="success" type="chain">getAllClaList</result>
+		</action>
+		
+		<!-- 关于Kc -->
+		<action name="getAllCouList" class="KcgetList" method="getAllCouList">
+			<result name="success">/course.jsp</result>
+		</action>
+		<action name="courseAdmin" class="kcSelect" method="fromKcUsername">
+		<result name="success" type="chain">getAllCouList</result>
+		</action>
+		<action name="kcaction" class="kcaction"  method= "addKc">
+			<result name="success" type="chain">getAllCouList</result>
+		</action>
+		<action name="kcInfo" class="KcInfo" method="KcInfo">
+			<result name="success" type="chain">getAllCouList</result>
+		</action>
+		<action name="deleteKc" class="DeleteKc" method="deleteKc">
+			<result name="success" type="chain">getAllCouList</result>
+		</action>
+		<action name="updateKcView" class="UpdateKcView" method="updateKcView">
+			<result name="success">/updateKcView.jsp</result>
+		</action>
+		<action name="updateKc" class="UpdateKc" method="updateKc">
+			<result name="success" type="chain">getAllCouList</result>
 		</action>
 	</package>
 </struts>    

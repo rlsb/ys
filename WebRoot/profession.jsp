@@ -44,13 +44,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
 		</div>
 		   <button><a href="zyInfo" id="aa">查询</a></button>
-   			<s:form  action="proAdmin"  method="post" >
+   			<s:form  action="professionAdmin"  method="post" >
 		    <s:select   
 		     		name="listName1"       
 		            label="选择查询方式"
 		            list="list2"             
 		            />		           
-				<s:textfield name="proName"></s:textfield>
+				<s:textfield name="professionName"></s:textfield>
 		  		<s:submit value="确定"/>
 		   </s:form>
 		   

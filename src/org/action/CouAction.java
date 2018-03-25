@@ -4,26 +4,26 @@ package org.action;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import org.model.Zyxx;
-import org.service.ProService;
+import org.model.Kcxx;
+import org.service.CouService;
 import org.tools.Pager;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ProAction extends ActionSupport{
+public class CouAction extends ActionSupport{
 	private int pageNow = 1;
 	private int pageSize = 8;
-	private Zyxx zy;
-	private ProService proService;
-	private String professionName;
+	private Kcxx kc;
+	private CouService couService;
+	private String courseName;
 	//关于管理员查询	
 		private List<String> list2;
-		public String getProName() {
-			return professionName;
+		public String getCourseName() {
+			return courseName;
 		}
-		public void setProName(String professionName) {
-			this.professionName = professionName;
+		public void setCourseName(String courseName) {
+			this.courseName = courseName;
 		}
 
 		private List<String> listName1;
@@ -41,23 +41,23 @@ public class ProAction extends ActionSupport{
 			this.listName1 = listName1;
 		}
 		
-		private Zyxx user;
+		private Kcxx user;
 		
-		public Zyxx getUser() {
+		public Kcxx getUser() {
 			return user;
 		}
-		public void setUser(Zyxx user) {
+		public void setUser(Kcxx user) {
 			this.user = user;
 		}
-		public String fromZyUsername() throws Exception {
+		public String fromKcUsername() throws Exception {
 			// TODO Auto-generated method stub
 			
-			System.out.println(listName1.get(0)+" "+professionName);
+			System.out.println(listName1.get(0)+" "+courseName);
 			if (listName1.get(0).equals("按照编号查询")) {
 				System.out.println("按照编号查询");
-				 user=proService.find(Integer.parseInt(professionName));
+				 user=couService.find(Integer.parseInt(courseName));
 				 Map request = (Map)ActionContext.getContext().get("request");
-				Pager page = new Pager(getPageNow(), proService.findZySize());
+				Pager page = new Pager(getPageNow(), couService.findKcSize());
 				System.out.println(page.getPageNow()+" page");
 				request.put("list", user);
 				if(user!=null){
@@ -65,9 +65,9 @@ public class ProAction extends ActionSupport{
 				}else
 					return ERROR;
 			}else if(listName1.get(0).equals("按照所选专业查询")){
-				List list = proService.findProfession(Integer.parseInt(professionName), pageNow, pageSize);
+				List list = couService.findCourse(Integer.parseInt(courseName), pageNow, pageSize);
 				Map request = (Map)ActionContext.getContext().get("request");
-				Pager page = new Pager(getPageNow(), proService.findZySize());
+				Pager page = new Pager(getPageNow(), couService.findKcSize());
 				System.out.println(page.getPageNow()+" page");
 				request.put("list", list);
 				request.put("page", page);
@@ -79,7 +79,7 @@ public class ProAction extends ActionSupport{
 			  else	
 				return ERROR;
 		}
-		public  String getAllProList() throws Exception  {
+		public  String getAllCouList() throws Exception  {
 			// TODO Auto-generated method stub
 			list2=new ArrayList<String>();
 			list2.add("按照编号查询");
@@ -88,49 +88,51 @@ public class ProAction extends ActionSupport{
 		}
 		
 	//关于增加	
-	public String addZy() throws Exception{
-		Zyxx stu = new Zyxx();
-		stu.setProfessionid(zy.getProfessionid());
-		stu.setProfessionname(zy.getProfessionname());
-		stu.setFacultyid(zy.getFacultyid());
-		System.out.println(zy.getProfessionid()+" "+zy.getProfessionname());
-		proService.save(stu);
+	public String addKc() throws Exception{
+		Kcxx stu = new Kcxx();
+		stu.setCourseid(kc.getCourseid());
+		stu.setCoursename(kc.getCoursename());
+		stu.setFacultyid(kc.getFacultyid());
+		stu.setCoursecredit(kc.getCoursecredit());
+		System.out.println(kc.getCourseid()+" "+kc.getCoursename());
+		couService.save(stu);
 		return SUCCESS;
 	}
 	
 	
 	//查询管理员所有信息
-	public String ZyInfo() throws Exception{
+	public String KcInfo() throws Exception{
 		
-		List list = proService.findAll(pageNow, pageSize);
+		List list = couService.findAll(pageNow, pageSize);
 		Map request = (Map)ActionContext.getContext().get("request");
-		Pager page = new Pager(getPageNow(), proService.findZySize());
+		Pager page = new Pager(getPageNow(), couService.findKcSize());
 		System.out.println(page.getPageNow()+" page");
 		request.put("list", list);
 		request.put("page", page);
 		return SUCCESS;
 	} 
 	//关于删除
-	public String deleteZy() throws Exception{
-		Integer Professionid = zy.getProfessionid();
-		proService.delete(Professionid);
+	public String deleteKc() throws Exception{
+		Integer Courseid = kc.getCourseid();
+		couService.delete(Courseid);
 		return SUCCESS;
 	}
 	//显示修改页面
-	public String updateZyView() throws Exception{
-		Integer professionid = zy.getProfessionid();
-		Zyxx zyInfo = proService.find(professionid);
+	public String updateKcView() throws Exception{
+		Integer courseid = kc.getCourseid();
+		Kcxx kcInfo = couService.find(courseid);
 		Map request = (Map)ActionContext.getContext().get("request");
-		request.put("zyInfo", zyInfo);
+		request.put("kcInfo", kcInfo);
 		return SUCCESS;
 	}
 	//执行修改操作
-	public String updateZy() throws Exception{
-		Zyxx zy1 = proService.find(zy.getProfessionid());
-		zy1.setProfessionname(zy.getProfessionname());;
-		zy1.setFacultyid(zy.getFacultyid());
+	public String updateKc() throws Exception{
+		Kcxx kc1 = couService.find(kc.getCourseid());
+		kc1.setCoursename(kc.getCoursename());;
+		kc1.setFacultyid(kc.getFacultyid());
+		kc1.setCoursecredit(kc.getCoursecredit());
 		Map request = (Map)ActionContext.getContext().get("request");
-		proService.update(zy1);
+		couService.update(kc1);
 		return SUCCESS;
 	}
 	public int getPageNow() {
@@ -145,17 +147,17 @@ public class ProAction extends ActionSupport{
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
-	public Zyxx getZy() {
-		return zy;
+	public Kcxx getKc() {
+		return kc;
 	}
-	public void setZy(Zyxx zy) {
-		this.zy = zy;
+	public void setKc(Kcxx kc) {
+		this.kc = kc;
 	}
-	public ProService getProService() {
-		return proService;
+	public CouService getCouService() {
+		return couService;
 	}
-	public void setProService(ProService proService) {
-		this.proService = proService;
+	public void setCouService(CouService couService) {
+		this.couService = couService;
 	}
 	
 	

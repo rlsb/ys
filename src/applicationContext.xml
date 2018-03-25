@@ -40,7 +40,9 @@
 				<value>org/model/Glyxx.hbm.xml</value>
 				<value>org/model/Jsxx.hbm.xml</value>
 				<value>org/model/Xyxx.hbm.xml</value>
-				<value>org/model/Zyxx.hbm.xml</value></list>
+				<value>org/model/Zyxx.hbm.xml</value>
+				<value>org/model/Bjxx.hbm.xml</value>
+				<value>org/model/Kcxx.hbm.xml</value></list>
 		</property>
 	</bean>
 	<bean id="transactionManager"
@@ -76,6 +78,8 @@
 				<value>glyService</value>
 				<value>colService</value>
 				<value>proService</value>
+				<value>claService</value>
+				<value>couService</value>
 			</list>
 			<!--   此处可增加其他需要自动创建事务代理的bean-->
 		</property>
@@ -233,5 +237,95 @@
 	<bean id="UpdateZy" class="org.action.ProAction">
 		<property name="proService">
 			<ref bean="proService"/>
+		</property></bean>
+		
+		<!-- 关于Bj -->
+	<bean id="bjaction" class="org.action.ClaAction">
+		<property name="claService">
+			<ref bean="claService"/>
+		</property>
+	</bean>
+	<bean id="claService" class="org.service.imp.ClaManage">
+		<property name="bjDao">
+			<ref bean="bj"/>
+		</property>
+	</bean>
+	<bean id="bj" class="org.dao.imp.ClassesImp">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="bjSelect" class="org.action.ClaAction">
+		<property name="claService">
+			<ref bean="claService"/>
+		</property>
+	</bean>
+	<bean id="BjgetList" class="org.action.ClaAction">
+	</bean>
+
+	<bean id="BjInfo" class="org.action.ClaAction">
+		<property name="claService">
+			<ref bean="claService"/>
+		</property></bean>
+		
+	<bean id="DeleteBj" class="org.action.ClaAction">
+		<property name="claService">
+			<ref bean="claService"/>
+		</property></bean>
+		
+	<bean id="UpdateBjView" class="org.action.ClaAction">
+		<property name="claService">
+			<ref bean="claService"/>
+		</property></bean>
+		
+	<bean id="UpdateBj" class="org.action.ClaAction">
+		<property name="claService">
+			<ref bean="claService"/>
+		</property></bean>
+		
+		<!-- 关于Kc -->
+	<bean id="kcaction" class="org.action.CouAction">
+		<property name="couService">
+			<ref bean="couService"/>
+		</property>
+	</bean>
+	<bean id="couService" class="org.service.imp.CouManage">
+		<property name="kcDao">
+			<ref bean="kc"/>
+		</property>
+	</bean>
+	<bean id="kc" class="org.dao.imp.CourseImp">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="kcSelect" class="org.action.CouAction">
+		<property name="couService">
+			<ref bean="couService"/>
+		</property>
+	</bean>
+	<bean id="KcgetList" class="org.action.CouAction">
+	</bean>
+
+	<bean id="KcInfo" class="org.action.CouAction">
+		<property name="couService">
+			<ref bean="couService"/>
+		</property></bean>
+		
+	<bean id="DeleteKc" class="org.action.CouAction">
+		<property name="couService">
+			<ref bean="couService"/>
+		</property></bean>
+		
+	<bean id="UpdateKcView" class="org.action.CouAction">
+		<property name="couService">
+			<ref bean="couService"/>
+		</property></bean>
+		
+	<bean id="UpdateKc" class="org.action.CouAction">
+		<property name="couService">
+			<ref bean="couService"/>
 		</property></bean>
 	</beans>

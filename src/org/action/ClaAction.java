@@ -4,26 +4,26 @@ package org.action;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import org.model.Zyxx;
-import org.service.ProService;
+import org.model.Bjxx;
+import org.service.ClaService;
 import org.tools.Pager;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ProAction extends ActionSupport{
+public class ClaAction extends ActionSupport{
 	private int pageNow = 1;
 	private int pageSize = 8;
-	private Zyxx zy;
-	private ProService proService;
-	private String professionName;
+	private Bjxx bj;
+	private ClaService claService;
+	private String classesName;
 	//关于管理员查询	
 		private List<String> list2;
 		public String getProName() {
-			return professionName;
+			return classesName;
 		}
-		public void setProName(String professionName) {
-			this.professionName = professionName;
+		public void setProName(String classesName) {
+			this.classesName = classesName;
 		}
 
 		private List<String> listName1;
@@ -41,23 +41,23 @@ public class ProAction extends ActionSupport{
 			this.listName1 = listName1;
 		}
 		
-		private Zyxx user;
+		private Bjxx user;
 		
-		public Zyxx getUser() {
+		public Bjxx getUser() {
 			return user;
 		}
-		public void setUser(Zyxx user) {
+		public void setUser(Bjxx user) {
 			this.user = user;
 		}
-		public String fromZyUsername() throws Exception {
+		public String fromBjUsername() throws Exception {
 			// TODO Auto-generated method stub
 			
-			System.out.println(listName1.get(0)+" "+professionName);
+			System.out.println(listName1.get(0)+" "+classesName);
 			if (listName1.get(0).equals("按照编号查询")) {
 				System.out.println("按照编号查询");
-				 user=proService.find(Integer.parseInt(professionName));
+				 user=claService.find(Integer.parseInt(classesName));
 				 Map request = (Map)ActionContext.getContext().get("request");
-				Pager page = new Pager(getPageNow(), proService.findZySize());
+				Pager page = new Pager(getPageNow(), claService.findBjSize());
 				System.out.println(page.getPageNow()+" page");
 				request.put("list", user);
 				if(user!=null){
@@ -65,9 +65,9 @@ public class ProAction extends ActionSupport{
 				}else
 					return ERROR;
 			}else if(listName1.get(0).equals("按照所选专业查询")){
-				List list = proService.findProfession(Integer.parseInt(professionName), pageNow, pageSize);
+				List list = claService.findClasses(Integer.parseInt(classesName), pageNow, pageSize);
 				Map request = (Map)ActionContext.getContext().get("request");
-				Pager page = new Pager(getPageNow(), proService.findZySize());
+				Pager page = new Pager(getPageNow(), claService.findBjSize());
 				System.out.println(page.getPageNow()+" page");
 				request.put("list", list);
 				request.put("page", page);
@@ -79,7 +79,7 @@ public class ProAction extends ActionSupport{
 			  else	
 				return ERROR;
 		}
-		public  String getAllProList() throws Exception  {
+		public  String getAllClaList() throws Exception  {
 			// TODO Auto-generated method stub
 			list2=new ArrayList<String>();
 			list2.add("按照编号查询");
@@ -88,49 +88,51 @@ public class ProAction extends ActionSupport{
 		}
 		
 	//关于增加	
-	public String addZy() throws Exception{
-		Zyxx stu = new Zyxx();
-		stu.setProfessionid(zy.getProfessionid());
-		stu.setProfessionname(zy.getProfessionname());
-		stu.setFacultyid(zy.getFacultyid());
-		System.out.println(zy.getProfessionid()+" "+zy.getProfessionname());
-		proService.save(stu);
+	public String addBj() throws Exception{
+		Bjxx stu = new Bjxx();
+		stu.setClassid(bj.getClassid());
+		stu.setClassname(bj.getClassname());
+		stu.setProfessionid(bj.getProfessionid());
+		stu.setGradename(bj.getGradename());
+		System.out.println(bj.getClassid()+" "+bj.getClassname());
+		claService.save(stu);
 		return SUCCESS;
 	}
 	
 	
 	//查询管理员所有信息
-	public String ZyInfo() throws Exception{
+	public String BjInfo() throws Exception{
 		
-		List list = proService.findAll(pageNow, pageSize);
+		List list = claService.findAll(pageNow, pageSize);
 		Map request = (Map)ActionContext.getContext().get("request");
-		Pager page = new Pager(getPageNow(), proService.findZySize());
+		Pager page = new Pager(getPageNow(), claService.findBjSize());
 		System.out.println(page.getPageNow()+" page");
 		request.put("list", list);
 		request.put("page", page);
 		return SUCCESS;
 	} 
 	//关于删除
-	public String deleteZy() throws Exception{
-		Integer Professionid = zy.getProfessionid();
-		proService.delete(Professionid);
+	public String deleteBj() throws Exception{
+		Integer Classid = bj.getClassid();
+		claService.delete(Classid);
 		return SUCCESS;
 	}
 	//显示修改页面
-	public String updateZyView() throws Exception{
-		Integer professionid = zy.getProfessionid();
-		Zyxx zyInfo = proService.find(professionid);
+	public String updateBjView() throws Exception{
+		Integer classid = bj.getClassid();
+		Bjxx bjInfo = claService.find(classid);
 		Map request = (Map)ActionContext.getContext().get("request");
-		request.put("zyInfo", zyInfo);
+		request.put("bjInfo", bjInfo);
 		return SUCCESS;
 	}
 	//执行修改操作
-	public String updateZy() throws Exception{
-		Zyxx zy1 = proService.find(zy.getProfessionid());
-		zy1.setProfessionname(zy.getProfessionname());;
-		zy1.setFacultyid(zy.getFacultyid());
+	public String updateBj() throws Exception{
+		Bjxx bj1 = claService.find(bj.getClassid());
+		bj1.setClassname(bj.getClassname());;
+		bj1.setProfessionid(bj.getProfessionid());
+		bj1.setGradename(bj.getGradename());
 		Map request = (Map)ActionContext.getContext().get("request");
-		proService.update(zy1);
+		claService.update(bj1);
 		return SUCCESS;
 	}
 	public int getPageNow() {
@@ -145,17 +147,17 @@ public class ProAction extends ActionSupport{
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
-	public Zyxx getZy() {
-		return zy;
+	public Bjxx getBj() {
+		return bj;
 	}
-	public void setZy(Zyxx zy) {
-		this.zy = zy;
+	public void setBj(Bjxx bj) {
+		this.bj = bj;
 	}
-	public ProService getProService() {
-		return proService;
+	public ClaService getClaService() {
+		return claService;
 	}
-	public void setProService(ProService proService) {
-		this.proService = proService;
+	public void setClaService(ClaService claService) {
+		this.claService = claService;
 	}
 	
 	
