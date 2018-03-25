@@ -10,10 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
  
     <base href="<%=basePath%>">
-     
     <title>管理员信息管理</title>
-    <link rel="stylesheet" type="text/css" href="css/admin.css">
-    
 	<script type="text/javascript"> 
 
 		function show(){
@@ -25,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             document.getElementById("pic").style.left=x+250;
             document.getElementById("pic").style.visibility="visible";
            
-            var formDiv="<form action='glyaction1' method='post'>";
+            var formDiv="<form action='glyaction' method='post'>";
             formDiv+="用户名: <input type='text' name='gly.username' /><br>";
             formDiv+="密码:    <input type='password' name='gly.password' /><br>";
            	formDiv+="所属学院:   <input type='text' name='gly.facultyName' /><br><br>";     
@@ -45,65 +42,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         function jichu() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("chance").innerHTML="<iframe src='index.jsp'   height=100% width=100% frameborder=0></iframe>";
+	    document.getElementById("chance").innerHTML="<iframe src='index.jsp'   height=100% width=100%></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 	    function guanli() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("chance").innerHTML="<iframe src='glyInfo1.action'   height=100% width=100% frameborder=0></iframe>";
+	    document.getElementById("chance").innerHTML="<iframe src='getList.action'   height=100% width=100%></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 </script>
 
   </head>
   
-  <body bgcolor="ededed">
+  <body >
    	
     <div id="all">
-    <div id="allcontent">
-    <div id="left">
-    		
-    	<div  class="admin">
-    		<img src="image/admin.png" >
-    		<s:property value="#session.user.username" />
-    	</div> 
-    <div id="user">
-    	<p class="word">账号</p>
-	    <div class="username">
-	    	<s:property value="#session.user.username" />
-	    </div>	
-    </div>
-    <div id="pass">
-    	<p class="word">密码</p>
-	    <div class="password">  
-	       	<s:property value="#session.user.password" />	
-	    </div>
-    </div>		
-	    	
-        <div id="top"> 
-        	<div id="right">
-        		<a href="school.jsp">返回首页</a>
-            	<!-- <p onclick="admin()">admin</p> -->
-            </div>
-        </div>
-      </div>
+    <div id="allcontent"> 	   
     <div id="content">
-    <div id="ThreeButton" >
-        <input type="button" value=基础信息管理   onclick="jichu()">&nbsp; &nbsp;&nbsp; &nbsp;
-        <input type="button" value=管理员管理     onclick="guanli()">&nbsp; &nbsp;&nbsp; &nbsp;
-        <input type="button" value=考勤时间段设置  onclick="timeset()">
-    </div>
   	<div id="chance">
   		
   	 <!-- <input type="button" value="切换界面" onclick="refreshTime() "> -->
   		<input type="button" value="添加用户" onclick="show()"> 
 		<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
 		</div>
-
- 	
-         <s:form  action="selectAdmin1"  method="post" >
-
+		
+  	
+         <s:form  action="selectAdmin"  method="post" >
 		    <s:select   
 		     		name="listName"       
 		            label="选择查询方式"
@@ -125,22 +90,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<td><s:property value="#gly.password"/></td>
 						<td><a href="deleteGly.action?gly.username=<s:property value ="#gly.username"/>" 
 							onClick="if(!confirm('确定删除该生信息吗？'))return false;else return true;">删除</a></td>
-						<td><a href="updateGlyView.action?gly.username=<s:property value="#gly.username"/>">修改</a></td>
+						<td><a href="updateGlyView1.action?gly.username=<s:property value="#gly.username"/>">修改</a></td>
 					</tr>
 				</s:iterator>
 				<tr>
 					<s:set name="page" value="#request.page"></s:set>
 					<s:if test="#page.hasFirst">
-						<s:a href="glyInfo.action?pageNow=1">首页</s:a>
+						<s:a href="glyInfo1.action?pageNow=1">首页</s:a>
 					</s:if>
 					<s:if test="#page.hasPre">
-						<a href="glyInfo.action?pageNow=<s:property value="#page.pageNow-1"/>">上一页</a>
+						<a href="glyInfo1.action?pageNow=<s:property value="#page.pageNow-1"/>">上一页</a>
 					</s:if>
 					<s:if test="#page.hasNext">
-						<a href="glyInfo.action?pageNow=<s:property value="#page.pageNow+1"/>">下一页</a>
+						<a href="glyInfo1.action?pageNow=<s:property value="#page.pageNow+1"/>">下一页</a>
 					</s:if>
 					<s:if test="#page.hasLast">
-						<a href="glyInfo.action?pageNow=<s:property value="#page.totalPage"/>">尾页</a>
+						<a href="glyInfo1.action?pageNow=<s:property value="#page.totalPage"/>">尾页</a>
 					</s:if>
 				</tr>
 			</table>
@@ -151,18 +116,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
   </body>
  <style type="text/css">
+ #form{
+  		width:700px;
+  		height:auto;
+  		box-shadow: 10px 10px 5px #888888;
+  		
+  	}
+  	#form table,th,tr{
+		border: 1px solid white;	
+	}
+ #selectAdmin{
+		text-decoration: none;
+    	margin-left: 90px;
+    	margin-top: -25px;
+	}
+	#selectAdmin_adminName{
+		float: right;
+    	margin-left: 135px;
+    	margin-top: -25px;
+	}
+	#selectAdmin_0{
+		height:21px;
+		float: right;
+    	margin-left: 180px;
+    	margin-top: -29px;
+	}
  	.admin{
  		font-family:"微软雅黑";
  		color:#fff;
  		font-size:26px;
  		float:right;
- 		margin-right:80px;
- 		margin-top:20px;
+ 		margin-right:110px;
+ 		margin-top:6px;
  	}
  	#user{
  		width:160px;
  		hight:50px;
  		margin-left:10px;
+ 		margin-top:20px;
  	}
 
  	.username{
@@ -193,22 +184,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  		font-size:20px;
  		margin-top:-40px;
  	}
- 	#selectAdmin1{
-		text-decoration: none;
-    	margin-left: 90px;
-    	margin-top: -25px;
-	}
-	#selectAdmin1_adminName{
-		float: right;
-    	margin-left: 135px;
-    	margin-top: -25px;
-	}
-	#selectAdmin1_0{
-		height:21px;
-		float: right;
-    	margin-left: 180px;
-    	margin-top: -29px;
-	}
  </style>
   
 </html>

@@ -47,22 +47,7 @@ body{
 		top:13%;
 		left:20%
 	}
-	#selectAdmin{
-		text-decoration: none;
-    	margin-left: 90px;
-    	margin-top: -25px;
-	}
-	#selectAdmin_adminName{
-		float: right;
-    	margin-left: 135px;
-    	margin-top: -25px;
-	}
-	#selectAdmin_0{
-		height:21px;
-		float: right;
-    	margin-left: 180px;
-    	margin-top: -29px;
-	}
+	
   	#aa{
   		text-decoration:none;
   		color:#000;

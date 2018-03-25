@@ -35,7 +35,7 @@ public class GlyImp extends HibernateDaoSupport implements GlyDao{
 		query.setMaxResults(1);
 		ts.commit();
 		session.close();
-		System.out.println(gl.getFacultyName());
+		System.out.println(gl.getFacultyId());
 		return gl;
 	}
 	//²éËùÓÐ

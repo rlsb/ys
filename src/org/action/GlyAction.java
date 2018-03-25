@@ -81,6 +81,13 @@ public class GlyAction extends ActionSupport{
 			list1.add("按照所选学院查询");
 			return SUCCESS;
 		}
+		public  String getList11() throws Exception  {
+			// TODO Auto-generated method stub
+			list1=new ArrayList<String>();
+			list1.add("按照账号查询");
+			list1.add("按照所选学院查询");
+			return SUCCESS;
+		}
 		
 	//关于专业查询
 	
@@ -132,7 +139,13 @@ public class GlyAction extends ActionSupport{
 		return SUCCESS;
 	}
 	
-	
+	public String updateGlyView1() throws Exception{
+		String username = gly.getUsername();
+		Glyxx glyInfo = glyService.find(username);
+		Map request = (Map)ActionContext.getContext().get("request");
+		request.put("glyInfo", glyInfo);
+		return SUCCESS;
+	}
 	
 	public int getPageNow() {
 		return pageNow;

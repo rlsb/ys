@@ -8,49 +8,72 @@
 			<result name="success" >/school.jsp</result>
 			<result name="error">/test.jsp</result>
 		</action>
+		
+		
+		<!-- 关于Gl -->
 		<action name="getList" class="GlygetList" method="getList">
 			<result name="success">/success.jsp</result>
 		</action>
 		<action name="selectAdmin" class="glySelect" method="fromGlyUsername">
-		<result name="success" type="chain">getList</result>
+		<result name="success" >/Gly.jsp</result>
 		</action>
 		<action name="glyaction" class="glyaction"  method= "addJs">
-			<result name="success" type="chain">getList</result>
+			<result name="success" type="chain">glyInfo1</result>
 		</action>
 		<action name="glyInfo" class="GlyInfo" method="glyInfo">
 			<result name="success" type="chain">getList</result>
 		</action>
 		<action name="deleteGly" class="DeleteGly" method="deleteGly">
-			<result name="success" type="chain">getList</result>
+			<result name="success" type="chain">glyInfo1</result>
 		</action>
 		<action name="updateGlyView" class="UpdateGlyView" method="updateGlyView">
 			<result name="success">/updateGlyView.jsp</result>
 		</action>
 		<action name="updateGly" class="UpdateGly" method="updateGly">
-			<result name="success" type="chain">getList</result>
+			<result name="success" type="chain">glyInfo</result>
 		</action>
+		<!-- 修改的管理 -->
+		<action name="glyInfo1" class="GlyInfo" method="glyInfo">
+			<result name="success" type="chain">getList11</result>
+		</action>
+		<action name="getList11" class="GlygetList" method="getList11">
+			<result name="success">/Gly.jsp</result>
+		</action>
+		<action name="selectAdmin1" class="glySelect" method="fromGlyUsername">
+		<result name="success" >/success.jsp</result>
+		</action>
+		<action name="glyaction1" class="glyaction"  method= "addJs">
+			<result name="success" type="chain">glyInfo</result>
+		</action>
+		<action name="updateGly1" class="UpdateGly" method="updateGly">
+			<result name="success" type="chain">glyInfo1</result>
+		</action>
+		<action name="updateGlyView1" class="UpdateGlyView" method="updateGlyView">
+			<result name="success">/UpdateGly.jsp</result>
+		</action>
+		
 		
 		<!-- 关于Xy -->
 		<action name="getAllList" class="XygetList" method="getAllList">
-			<result name="success">/college.jsp</result>
+			<result name="success" >/college.jsp</result>
 		</action>
 		<action name="proAdmin" class="xySelect" method="fromXyUsername">
 		<result name="success" type="chain">getAllList</result>
 		</action>
 		<action name="xyaction" class="xyaction"  method= "addXy">
-			<result name="success" type="chain">getAllList</result>
+			<result name="success" type="chain">xyInfo</result>
 		</action>
 		<action name="xyInfo" class="XyInfo" method="XyInfo">
 			<result name="success" type="chain">getAllList</result>
 		</action>
 		<action name="deleteXy" class="DeleteXy" method="deleteXy">
-			<result name="success" type="chain">getAllList</result>
+			<result name="success" type="chain">xyInfo</result>
 		</action>
 		<action name="updateXyView" class="UpdateXyView" method="updateXyView">
 			<result name="success">/updateXyView.jsp</result>
 		</action>
 		<action name="updateXy" class="UpdateXy" method="updateXy">
-			<result name="success" type="chain">getAllList</result>
+			<result name="success" type="chain">xyInfo</result>
 		</action>
 		
 		<!-- 关于Zy -->
@@ -61,19 +84,19 @@
 		<result name="success" type="chain">getAllProList</result>
 		</action>
 		<action name="zyaction" class="zyaction"  method= "addZy">
-			<result name="success" type="chain">getAllProList</result>
+			<result name="success" type="chain">zyInfo</result>
 		</action>
 		<action name="zyInfo" class="ZyInfo" method="ZyInfo">
 			<result name="success" type="chain">getAllProList</result>
 		</action>
 		<action name="deleteZy" class="DeleteZy" method="deleteZy">
-			<result name="success" type="chain">getAllProList</result>
+			<result name="success" type="chain">zyInfo</result>
 		</action>
 		<action name="updateZyView" class="UpdateZyView" method="updateZyView">
 			<result name="success">/updateZyView.jsp</result>
 		</action>
 		<action name="updateZy" class="UpdateZy" method="updateZy">
-			<result name="success" type="chain">getAllProList</result>
+			<result name="success" type="chain">zyInfo</result>
 		</action>
 		
 		<!-- 关于Bj -->
@@ -84,19 +107,19 @@
 		<result name="success" type="chain">getAllClaList</result>
 		</action>
 		<action name="bjaction" class="bjaction"  method= "addBj">
-			<result name="success" type="chain">getAllClaList</result>
+			<result name="success" type="chain">bjInfo</result>
 		</action>
 		<action name="bjInfo" class="BjInfo" method="BjInfo">
 			<result name="success" type="chain">getAllClaList</result>
 		</action>
 		<action name="deleteBj" class="DeleteBj" method="deleteBj">
-			<result name="success" type="chain">getAllClaList</result>
+			<result name="success" type="chain">bjInfo</result>
 		</action>
 		<action name="updateBjView" class="UpdateBjView" method="updateBjView">
 			<result name="success">/updateBjView.jsp</result>
 		</action>
 		<action name="updateBj" class="UpdateBj" method="updateBj">
-			<result name="success" type="chain">getAllClaList</result>
+			<result name="success" type="chain">bjInfo</result>
 		</action>
 		
 		<!-- 关于Kc -->
@@ -107,19 +130,19 @@
 		<result name="success" type="chain">getAllCouList</result>
 		</action>
 		<action name="kcaction" class="kcaction"  method= "addKc">
-			<result name="success" type="chain">getAllCouList</result>
+			<result name="success" type="chain">kcInfo</result>
 		</action>
 		<action name="kcInfo" class="KcInfo" method="KcInfo">
 			<result name="success" type="chain">getAllCouList</result>
 		</action>
 		<action name="deleteKc" class="DeleteKc" method="deleteKc">
-			<result name="success" type="chain">getAllCouList</result>
+			<result name="success" type="chain">kcInfo</result>
 		</action>
 		<action name="updateKcView" class="UpdateKcView" method="updateKcView">
 			<result name="success">/updateKcView.jsp</result>
 		</action>
 		<action name="updateKc" class="UpdateKc" method="updateKc">
-			<result name="success" type="chain">getAllCouList</result>
+			<result name="success" type="chain">kcInfo</result>
 		</action>
 	</package>
 </struts>    
