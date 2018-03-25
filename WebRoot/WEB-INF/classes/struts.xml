@@ -80,7 +80,7 @@
 		<action name="getAllClaList" class="BjgetList" method="getAllClaList">
 			<result name="success">/classes.jsp</result>
 		</action>
-		<action name="classesAdmin" class="bjSelect" method="fromBjUsername">
+		<action name="classAdmin" class="bjSelect" method="fromBjUsername">
 		<result name="success" type="chain">getAllClaList</result>
 		</action>
 		<action name="bjaction" class="bjaction"  method= "addBj">

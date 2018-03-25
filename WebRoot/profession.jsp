@@ -43,14 +43,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	<input type="button" value="添加用户" onclick="show()"> 
 		<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
 		</div>
-		   <button><a href="zyInfo" id="aa">查询</a></button>
    			<s:form  action="professionAdmin"  method="post" >
 		    <s:select   
 		     		name="listName1"       
 		            label="选择查询方式"
 		            list="list2"             
 		            />		           
-				<s:textfield name="professionName"></s:textfield>
+				<s:textfield name="markProName"></s:textfield>
 		  		<s:submit value="确定"/>
 		   </s:form>
 		   
@@ -93,12 +92,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	#form{
   		width:700px;
   		height:auto;
-  		margin:10px auto;
   		box-shadow: 10px 10px 5px #888888;
   		
   	}
   	#form table,th,tr{
 		border: 1px solid white;	
+	}
+	#professionAdmin{
+		text-decoration: none;
+    	margin-left: 90px;
+    	margin-top: -25px;
+	}
+	#professionAdmin_markProName{
+		float: right;
+    	margin-left: 135px;
+    	margin-top: -25px;
+	}
+	#professionAdmin_0{
+		height:21px;
+		float: right;
+    	margin-left: 180px;
+    	margin-top: -29px;
 	}
 	
   </style>

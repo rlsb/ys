@@ -16,14 +16,16 @@ public class CouAction extends ActionSupport{
 	private int pageSize = 8;
 	private Kcxx kc;
 	private CouService couService;
-	private String courseName;
+	private String markcourseName;
 	//关于管理员查询	
 		private List<String> list2;
-		public String getCourseName() {
-			return courseName;
+		
+
+		public String getMarkcourseName() {
+			return markcourseName;
 		}
-		public void setCourseName(String courseName) {
-			this.courseName = courseName;
+		public void setMarkcourseName(String markcourseName) {
+			this.markcourseName = markcourseName;
 		}
 
 		private List<String> listName1;
@@ -52,10 +54,10 @@ public class CouAction extends ActionSupport{
 		public String fromKcUsername() throws Exception {
 			// TODO Auto-generated method stub
 			
-			System.out.println(listName1.get(0)+" "+courseName);
+			System.out.println(listName1.get(0)+" "+markcourseName);
 			if (listName1.get(0).equals("按照编号查询")) {
 				System.out.println("按照编号查询");
-				 user=couService.find(Integer.parseInt(courseName));
+				 user=couService.find(Integer.parseInt(markcourseName));
 				 Map request = (Map)ActionContext.getContext().get("request");
 				Pager page = new Pager(getPageNow(), couService.findKcSize());
 				System.out.println(page.getPageNow()+" page");
@@ -65,7 +67,7 @@ public class CouAction extends ActionSupport{
 				}else
 					return ERROR;
 			}else if(listName1.get(0).equals("按照所选专业查询")){
-				List list = couService.findCourse(Integer.parseInt(courseName), pageNow, pageSize);
+				List list = couService.findCourse(Integer.parseInt(markcourseName), pageNow, pageSize);
 				Map request = (Map)ActionContext.getContext().get("request");
 				Pager page = new Pager(getPageNow(), couService.findKcSize());
 				System.out.println(page.getPageNow()+" page");

@@ -16,14 +16,16 @@ public class ClaAction extends ActionSupport{
 	private int pageSize = 8;
 	private Bjxx bj;
 	private ClaService claService;
-	private String classesName;
+	private String markclassName;
 	//关于管理员查询	
 		private List<String> list2;
-		public String getProName() {
-			return classesName;
+		
+
+		public String getMarkclassName() {
+			return markclassName;
 		}
-		public void setProName(String classesName) {
-			this.classesName = classesName;
+		public void setMarkclassName(String markclassName) {
+			this.markclassName = markclassName;
 		}
 
 		private List<String> listName1;
@@ -52,10 +54,10 @@ public class ClaAction extends ActionSupport{
 		public String fromBjUsername() throws Exception {
 			// TODO Auto-generated method stub
 			
-			System.out.println(listName1.get(0)+" "+classesName);
+			System.out.println(listName1.get(0)+" "+markclassName);
 			if (listName1.get(0).equals("按照编号查询")) {
 				System.out.println("按照编号查询");
-				 user=claService.find(Integer.parseInt(classesName));
+				 user=claService.find(Integer.parseInt(markclassName));
 				 Map request = (Map)ActionContext.getContext().get("request");
 				Pager page = new Pager(getPageNow(), claService.findBjSize());
 				System.out.println(page.getPageNow()+" page");
@@ -65,7 +67,7 @@ public class ClaAction extends ActionSupport{
 				}else
 					return ERROR;
 			}else if(listName1.get(0).equals("按照所选专业查询")){
-				List list = claService.findClasses(Integer.parseInt(classesName), pageNow, pageSize);
+				List list = claService.findClasses(Integer.parseInt(markclassName), pageNow, pageSize);
 				Map request = (Map)ActionContext.getContext().get("request");
 				Pager page = new Pager(getPageNow(), claService.findBjSize());
 				System.out.println(page.getPageNow()+" page");

@@ -16,14 +16,16 @@ public class ProAction extends ActionSupport{
 	private int pageSize = 8;
 	private Zyxx zy;
 	private ProService proService;
-	private String professionName;
+	private String markProName;
 	//关于管理员查询	
 		private List<String> list2;
-		public String getProName() {
-			return professionName;
+		
+
+		public String getMarkProName() {
+			return markProName;
 		}
-		public void setProName(String professionName) {
-			this.professionName = professionName;
+		public void setMarkProName(String markProName) {
+			this.markProName = markProName;
 		}
 
 		private List<String> listName1;
@@ -52,10 +54,10 @@ public class ProAction extends ActionSupport{
 		public String fromZyUsername() throws Exception {
 			// TODO Auto-generated method stub
 			
-			System.out.println(listName1.get(0)+" "+professionName);
+			System.out.println(listName1.get(0)+" "+markProName);
 			if (listName1.get(0).equals("按照编号查询")) {
 				System.out.println("按照编号查询");
-				 user=proService.find(Integer.parseInt(professionName));
+				 user=proService.find(Integer.parseInt(markProName));
 				 Map request = (Map)ActionContext.getContext().get("request");
 				Pager page = new Pager(getPageNow(), proService.findZySize());
 				System.out.println(page.getPageNow()+" page");
@@ -65,7 +67,7 @@ public class ProAction extends ActionSupport{
 				}else
 					return ERROR;
 			}else if(listName1.get(0).equals("按照所选专业查询")){
-				List list = proService.findProfession(Integer.parseInt(professionName), pageNow, pageSize);
+				List list = proService.findProfession(Integer.parseInt(markProName), pageNow, pageSize);
 				Map request = (Map)ActionContext.getContext().get("request");
 				Pager page = new Pager(getPageNow(), proService.findZySize());
 				System.out.println(page.getPageNow()+" page");

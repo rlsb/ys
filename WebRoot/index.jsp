@@ -14,25 +14,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 function college() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("content").innerHTML="<iframe src='getAllList.action'   height=100% width=100%></iframe>";
+	    document.getElementById("content").innerHTML="<iframe src='xyInfo.action'   height=100% width=100% frameborder=0></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 	function profession() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("content").innerHTML="<iframe src='getAllProList.action'   height=100% width=100%></iframe>";
+	    document.getElementById("content").innerHTML="<iframe src='zyInfo.action'   height=100% width=100% frameborder=0></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 	function classes() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("content").innerHTML="<iframe src='getAllClaList.action'   height=100% width=100%></iframe>";
+	    document.getElementById("content").innerHTML="<iframe src='bjInfo.action'   height=100% width=100% frameborder=0></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 	function course() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("content").innerHTML="<iframe src='getAllCouList.action'   height=100% width=100%></iframe>";
+	    document.getElementById("content").innerHTML="<iframe src='kcInfo.action'   height=100% width=100% frameborder=0></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 	    function guanli() 

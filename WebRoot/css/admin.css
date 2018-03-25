@@ -19,12 +19,7 @@ body{
 	height:95%;
 	background-color: #00284d;
 }
-	#left img{
-	display:inline-block;
-	vertical-align:middle;
-	margin-left: 30px;
-	margin-top: 10px;  
-}
+
 	#left p{
 	display: inline-block;
     vertical-align: middle;
@@ -52,7 +47,22 @@ body{
 		top:13%;
 		left:20%
 	}
-	
+	#selectAdmin{
+		text-decoration: none;
+    	margin-left: 90px;
+    	margin-top: -25px;
+	}
+	#selectAdmin_adminName{
+		float: right;
+    	margin-left: 135px;
+    	margin-top: -25px;
+	}
+	#selectAdmin_0{
+		height:21px;
+		float: right;
+    	margin-left: 180px;
+    	margin-top: -29px;
+	}
   	#aa{
   		text-decoration:none;
   		color:#000;
@@ -63,9 +73,7 @@ body{
   	#form{
   		width:700px;
   		height:auto;
-  		margin:10px auto;
   		box-shadow: 10px 10px 5px #888888;
-  		
   	}
   	#form table,th,tr{
 		border: 1px solid white;	

@@ -44,14 +44,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	<input type="button" value="添加用户" onclick="show()"> 
 		<div id="pic" style="border: 1;position: absolute;width: 200px;height: 280px; background:#00FF99;visibility: hidden">
 		</div>
-		   <button><a href="kcInfo" id="aa">查询</a></button>
    			<s:form  action="courseAdmin"  method="post" >
 		    <s:select   
 		     		name="listName1"       
 		            label="选择查询方式"
 		            list="list2"             
 		            />		           
-				<s:textfield name="courseName"></s:textfield>
+				<s:textfield name="markcourseName"></s:textfield>
 		  		<s:submit value="确定"/>
 		   </s:form>
 		   
@@ -95,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	#form{
   		width:700px;
   		height:auto;
-  		margin:10px auto;
+  		/* margin:10px auto; */
   		box-shadow: 10px 10px 5px #888888;
   		
   	}
@@ -103,5 +102,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		border: 1px solid white;	
 	}
 	
+	#courseAdmin{
+		text-decoration: none;
+    	margin-left: 90px;
+    	margin-top: -25px;
+	}
+	#courseAdmin_markcourseName{
+		float: right;
+    	margin-left: 135px;
+    	margin-top: -25px;
+	}
+	#courseAdmin_0{
+		height:21px;
+		float: right;
+    	margin-left: 180px;
+    	margin-top: -29px;
+	}
   </style>
 </html>

@@ -43,7 +43,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	<input type="button" value="添加用户" onclick="show()"> 
 		<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
 		</div>
-		   <button><a href="xyInfo" id="aa">查询</a></button>
    			<s:form  action="proAdmin"  method="post" >
 		    <s:select   
 		     		name="listName1"       
@@ -93,13 +92,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	#form{
   		width:700px;
   		height:auto;
-  		margin:10px auto;
   		box-shadow: 10px 10px 5px #888888;
   		
   	}
   	#form table,th,tr{
 		border: 1px solid white;	
 	}
-	
+	#proAdmin{
+		text-decoration: none;
+    	margin-left: 90px;
+    	margin-top: -25px;
+	}
+	#proAdmin_proName{
+		float: right;
+    	margin-left: 135px;
+    	margin-top: -25px;
+	}
+	#proAdmin_0{
+		height:21px;
+		float: right;
+    	margin-left: 180px;
+    	margin-top: -29px;
+	}
   </style>
 </html>

@@ -13,6 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      
     <title>管理员信息管理</title>
     <link rel="stylesheet" type="text/css" href="css/admin.css">
+    
 	<script type="text/javascript"> 
 
 		function show(){
@@ -44,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         function jichu() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("chance").innerHTML="<iframe src='index.jsp'   height=100% width=100%></iframe>";
+	    document.getElementById("chance").innerHTML="<iframe src='index.jsp'   height=100% width=100% frameborder=0></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 	    function guanli() 
@@ -62,8 +63,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="all">
     <div id="allcontent">
     <div id="left">
-    		<img src="image/admin.png" >
+    		
     	<div  class="admin">
+    		<img src="image/admin.png" >
     		<s:property value="#session.user.username" />
     	</div> 
     <div id="user">
@@ -98,8 +100,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		<input type="button" value="添加用户" onclick="show()"> 
 		<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
 		</div>
-		<button><a href="glyInfo" id="aa">查询</a></button>
-  	
+
          <s:form  action="selectAdmin"  method="post" >
 		    <s:select   
 		     		name="listName"       
@@ -153,14 +154,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  		color:#fff;
  		font-size:26px;
  		float:right;
- 		margin-right:110px;
- 		margin-top:6px;
+ 		margin-right:80px;
+ 		margin-top:20px;
  	}
  	#user{
  		width:160px;
  		hight:50px;
  		margin-left:10px;
- 		margin-top:20px;
  	}
 
  	.username{
