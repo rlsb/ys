@@ -12,7 +12,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
      
     <title>管理员信息管理</title>
-    <link rel="stylesheet" type="text/css" href="css/admin.css">
 	<script type="text/javascript"> 
 
 		function show(){
@@ -24,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             document.getElementById("pic").style.left=x+250;
             document.getElementById("pic").style.visibility="visible";
            
-            var formDiv="<form action='glyaction1' method='post'>";
+            var formDiv="<form action='glyaction' method='post'>";
             formDiv+="用户名: <input type='text' name='gly.username' /><br>";
             formDiv+="密码:    <input type='password' name='gly.password' /><br>";
            	formDiv+="所属学院:   <input type='text' name='gly.facultyName' /><br><br>";     
@@ -50,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    function guanli() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
-	    document.getElementById("chance").innerHTML="<iframe src='glyInfo1.action'   height=100% width=100%></iframe>";
+	    document.getElementById("chance").innerHTML="<iframe src='getList.action'   height=100% width=100%></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
 	} 
 </script>
@@ -61,46 +60,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	
     <div id="all">
     <div id="allcontent">
-    <div id="left">
-    		<img src="image/admin.png" >
-    	<div  class="admin">
-    		<s:property value="#session.user.username" />
-    	</div> 
-    <div id="user">
-    	<p class="word">账号</p>
-	    <div class="username">
-	    	<s:property value="#session.user.username" />
-	    </div>	
-    </div>
-    <div id="pass">
-    	<p class="word">密码</p>
-	    <div class="password">  
-	       	<s:property value="#session.user.password" />	
-	    </div>
-    </div>		
-	    	
-        <div id="top"> 
-        	<div id="right">
-        		<a href="school.jsp">返回首页</a>
-            	<!-- <p onclick="admin()">admin</p> -->
-            </div>
-        </div>
-      </div>
+ 	
+       
     <div id="content">
-    <div id="ThreeButton" >
-        <input type="button" value=基础信息管理   onclick="jichu()">&nbsp; &nbsp;&nbsp; &nbsp;
-        <input type="button" value=管理员管理     onclick="guanli()">&nbsp; &nbsp;&nbsp; &nbsp;
-        <input type="button" value=考勤时间段设置  onclick="timeset()">
-    </div>
+    
   	<div id="chance">
   		
   	 <!-- <input type="button" value="切换界面" onclick="refreshTime() "> -->
   		<input type="button" value="添加用户" onclick="show()"> 
 		<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
 		</div>
-		<button><a href="glyInfo" id="aa">查询</a></button>
+		
   	
-         <s:form  action="selectAdmin1"  method="post" >
+         <s:form  action="selectAdmin"  method="post" >
 		    <s:select   
 		     		name="listName"       
 		            label="选择查询方式"
@@ -128,16 +100,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<tr>
 					<s:set name="page" value="#request.page"></s:set>
 					<s:if test="#page.hasFirst">
-						<s:a href="glyInfo.action?pageNow=1">首页</s:a>
+						<s:a href="glyInfo1.action?pageNow=1">首页</s:a>
 					</s:if>
 					<s:if test="#page.hasPre">
-						<a href="glyInfo.action?pageNow=<s:property value="#page.pageNow-1"/>">上一页</a>
+						<a href="glyInfo1.action?pageNow=<s:property value="#page.pageNow-1"/>">上一页</a>
 					</s:if>
 					<s:if test="#page.hasNext">
-						<a href="glyInfo.action?pageNow=<s:property value="#page.pageNow+1"/>">下一页</a>
+						<a href="glyInfo1.action?pageNow=<s:property value="#page.pageNow+1"/>">下一页</a>
 					</s:if>
 					<s:if test="#page.hasLast">
-						<a href="glyInfo.action?pageNow=<s:property value="#page.totalPage"/>">尾页</a>
+						<a href="glyInfo1.action?pageNow=<s:property value="#page.totalPage"/>">尾页</a>
 					</s:if>
 				</tr>
 			</table>

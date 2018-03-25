@@ -13,10 +13,10 @@
 			value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="url"
-			value="jdbc:mysql://localhost:33060/yunshi">
+			value="jdbc:mysql://localhost:3306/yunshi">
 		</property>
 		<property name="username" value="root"></property>
-		<property name="password" value="123456"></property>
+		<property name="password" value="2014921xu"></property>
 		 <property name="maxActive"> <value>10</value> </property> 
          <property name="maxIdle">  <value>10</value> </property> 
     
