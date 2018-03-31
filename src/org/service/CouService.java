@@ -11,7 +11,7 @@ public interface CouService {
 	//根据学号查询
 	public Kcxx find(Integer kc);
 	//根据学院查询
-	public List findCourse(Integer kc,int pageNow,int pageSize);
+	public List findCourse(String kc,int pageNow,int pageSize);
 	//查询所有
 	public List findAll(int pageNow,int pageSize);
 	public int findKcSize();

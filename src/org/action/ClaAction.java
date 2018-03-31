@@ -66,8 +66,8 @@ public class ClaAction extends ActionSupport{
 					return SUCCESS;
 				}else
 					return ERROR;
-			}else if(listName1.get(0).equals("按照所选专业查询")){
-				List list = claService.findClasses(Integer.parseInt(markclassName), pageNow, pageSize);
+			}else if(listName1.get(0).equals("按照所选班级查询")){
+				List list = claService.findClasses(markclassName, pageNow, pageSize);
 				Map request = (Map)ActionContext.getContext().get("request");
 				Pager page = new Pager(getPageNow(), claService.findBjSize());
 				System.out.println(page.getPageNow()+" page");
@@ -85,7 +85,7 @@ public class ClaAction extends ActionSupport{
 			// TODO Auto-generated method stub
 			list2=new ArrayList<String>();
 			list2.add("按照编号查询");
-			list2.add("按照所选专业查询");
+			list2.add("按照所选班级查询");
 			return SUCCESS;
 		}
 		

@@ -67,7 +67,7 @@ public class ProAction extends ActionSupport{
 				}else
 					return ERROR;
 			}else if(listName1.get(0).equals("按照所选专业查询")){
-				List list = proService.findProfession(Integer.parseInt(markProName), pageNow, pageSize);
+				List list = proService.findProfession(markProName, pageNow, pageSize);
 				Map request = (Map)ActionContext.getContext().get("request");
 				Pager page = new Pager(getPageNow(), proService.findZySize());
 				System.out.println(page.getPageNow()+" page");

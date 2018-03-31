@@ -66,8 +66,8 @@ public class CouAction extends ActionSupport{
 					return SUCCESS;
 				}else
 					return ERROR;
-			}else if(listName1.get(0).equals("按照所选专业查询")){
-				List list = couService.findCourse(Integer.parseInt(markcourseName), pageNow, pageSize);
+			}else if(listName1.get(0).equals("按照所选课程查询")){
+				List list = couService.findCourse(markcourseName, pageNow, pageSize);
 				Map request = (Map)ActionContext.getContext().get("request");
 				Pager page = new Pager(getPageNow(), couService.findKcSize());
 				System.out.println(page.getPageNow()+" page");
@@ -85,7 +85,7 @@ public class CouAction extends ActionSupport{
 			// TODO Auto-generated method stub
 			list2=new ArrayList<String>();
 			list2.add("按照编号查询");
-			list2.add("按照所选专业查询");
+			list2.add("按照所选课程查询");
 			return SUCCESS;
 		}
 		

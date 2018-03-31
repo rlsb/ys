@@ -50,7 +50,7 @@ public class ColManage implements ColService{
 		xyDao.update(xy);
 	}
 	@Override
-	public List findCollege(Integer xy,int pageNow,int pageSize) {
+	public List findCollege(String xy,int pageNow,int pageSize) {
 		// TODO Auto-generated method stub
 		return xyDao.findCollege(xy,pageNow,pageSize);
 	}

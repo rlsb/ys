@@ -105,7 +105,7 @@ public class GlyImp extends HibernateDaoSupport implements GlyDao{
 		try{
 			Session session = getHibernateTemplate().getSessionFactory().openSession();
 			Transaction ts = session.beginTransaction();
-			Query query = session.createQuery("from Glyxx  where facultyName=?");
+			Query query = session.createQuery("from Glyxx  where facultyName=? order by username");
 			query.setParameter(0, gly);
 			int firstResult = (pageNow-1)*pageSize;
 			query.setFirstResult(firstResult);

@@ -10,7 +10,7 @@ public interface ProService {
 		//根据学号查询
 		public Zyxx find(Integer zy);
 		//根据学院查询
-		public List findProfession(Integer zy,int pageNow,int pageSize);
+		public List findProfession(String zy,int pageNow,int pageSize);
 		//查询所有
 		public List findAll(int pageNow,int pageSize);
 		public int findZySize();

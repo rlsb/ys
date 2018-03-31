@@ -50,7 +50,7 @@ public class CouManage implements CouService{
 		kcDao.update(kc);
 	}
 	@Override
-	public List findCourse(Integer kc,int pageNow,int pageSize) {
+	public List findCourse(String kc,int pageNow,int pageSize) {
 		// TODO Auto-generated method stub
 		return kcDao.findCourse(kc,pageNow,pageSize);
 	}

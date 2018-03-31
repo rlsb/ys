@@ -99,12 +99,12 @@ public class ProfessionImp  extends HibernateDaoSupport implements ProfessionDao
 				e.printStackTrace();
 			}
 		}
-		public List findProfession(Integer zy,int pageNow,int pageSize) {
+		public List findProfession(String zy,int pageNow,int pageSize) {
 			// TODO Auto-generated method stub
 			try{
 				Session session = getHibernateTemplate().getSessionFactory().openSession();
 				Transaction ts = session.beginTransaction();
-				Query query = session.createQuery("from Zyxx  where professionid=?");
+				Query query = session.createQuery("from Zyxx  where professionname=?");
 				query.setParameter(0, zy);
 				int firstResult = (pageNow-1)*pageSize;
 				query.setFirstResult(firstResult);

@@ -99,12 +99,12 @@ public class CollegeImp extends HibernateDaoSupport implements CollegeDao{
 				e.printStackTrace();
 			}
 		}
-		public List findCollege(Integer xy,int pageNow,int pageSize) {
+		public List findCollege(String xy,int pageNow,int pageSize) {
 			// TODO Auto-generated method stub
 			try{
 				Session session = getHibernateTemplate().getSessionFactory().openSession();
 				Transaction ts = session.beginTransaction();
-				Query query = session.createQuery("from Xyxx  where facultyid=?");
+				Query query = session.createQuery("from Xyxx  where facultyname=?");
 				query.setParameter(0, xy);
 				int firstResult = (pageNow-1)*pageSize;
 				query.setFirstResult(firstResult);

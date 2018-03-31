@@ -99,12 +99,12 @@ public class ClassesImp  extends HibernateDaoSupport implements ClassesDao{
 				e.printStackTrace();
 			}
 		}
-		public List findClasses(Integer bj,int pageNow,int pageSize) {
+		public List findClasses(String bj,int pageNow,int pageSize) {
 			// TODO Auto-generated method stub
 			try{
 				Session session = getHibernateTemplate().getSessionFactory().openSession();
 				Transaction ts = session.beginTransaction();
-				Query query = session.createQuery("from Bjxx  where classid=?");
+				Query query = session.createQuery("from Bjxx  where classname=?");
 				query.setParameter(0, bj);
 				int firstResult = (pageNow-1)*pageSize;
 				query.setFirstResult(firstResult);

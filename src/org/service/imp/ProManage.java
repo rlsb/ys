@@ -50,7 +50,7 @@ public class ProManage implements ProService{
 		zyDao.update(zy);
 	}
 	@Override
-	public List findProfession(Integer zy,int pageNow,int pageSize) {
+	public List findProfession(String zy,int pageNow,int pageSize) {
 		// TODO Auto-generated method stub
 		return zyDao.findProfession(zy,pageNow,pageSize);
 	}

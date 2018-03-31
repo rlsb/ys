@@ -10,7 +10,7 @@ public interface ClaService {
 		//根据学号查询
 		public Bjxx find(Integer bj);
 		//根据学院查询
-		public List findClasses(Integer bj,int pageNow,int pageSize);
+		public List findClasses(String bj,int pageNow,int pageSize);
 		//查询所有
 		public List findAll(int pageNow,int pageSize);
 		public int findBjSize();

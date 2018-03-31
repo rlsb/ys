@@ -50,7 +50,7 @@ public class ClaManage implements ClaService{
 		bjDao.update(bj);
 	}
 	@Override
-	public List findClasses(Integer bj,int pageNow,int pageSize) {
+	public List findClasses(String bj,int pageNow,int pageSize) {
 		// TODO Auto-generated method stub
 		return bjDao.findClasses(bj,pageNow,pageSize);
 	}

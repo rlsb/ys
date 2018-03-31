@@ -99,12 +99,12 @@ public class CourseImp  extends HibernateDaoSupport implements CourseDao{
 				e.printStackTrace();
 			}
 		}
-		public List findCourse(Integer kc,int pageNow,int pageSize) {
+		public List findCourse(String kc,int pageNow,int pageSize) {
 			// TODO Auto-generated method stub
 			try{
 				Session session = getHibernateTemplate().getSessionFactory().openSession();
 				Transaction ts = session.beginTransaction();
-				Query query = session.createQuery("from Kcxx  where courseid=?");
+				Query query = session.createQuery("from Kcxx  where coursename=?");
 				query.setParameter(0, kc);
 				int firstResult = (pageNow-1)*pageSize;
 				query.setFirstResult(firstResult);
