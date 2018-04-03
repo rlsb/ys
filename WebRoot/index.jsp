@@ -51,10 +51,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <div id="all">
     <div id="FourButton" >
-        <input type="button" value=学院  onclick="college()">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-        <input type="button" value=专业  onclick="profession()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;
-        <input type="button" value=班级  onclick="classes()">&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="button" value=课程  onclick="course()">
+        <input type="button" value=学院  onclick="college()" style="background-color:#fff;
+		color:#000; box-shadow:0px 1px 2px rgba(0,0,0,0.2);width: 250px;height: 30px; ">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="button" value=专业  onclick="profession()" style="background-color:#fff;
+		color:#000; box-shadow:0px 1px 2px rgba(0,0,0,0.2);width: 250px;height: 30px; margin-left: -58px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;
+        <input type="button" value=班级  onclick="classes()"style="background-color:#fff;
+		color:#000; box-shadow:0px 1px 2px rgba(0,0,0,0.2);width: 250px;height: 30px; margin-left: -58px">&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value=课程  onclick="course()"style="background-color:#fff;
+		color:#000; box-shadow:0px 1px 2px rgba(0,0,0,0.2);width: 250px;height: 30px;margin-left: -58px ">
     </div>
     <div id="content">
     	
@@ -64,6 +68,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  	<style type="text/css">
   	#content{
 		margin-top: 10px;
+	}
+	#FourButton{
+		
 	}
   </style>
 </html>

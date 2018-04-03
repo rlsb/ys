@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body bgcolor="ededed">
+  <body>
    	
     <div id="all">
     <div id="allcontent">
@@ -90,14 +90,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </div>
     <div id="content">
     <div id="ThreeButton" >
-        <input type="button" value=基础信息管理   onclick="jichu()">&nbsp; &nbsp;&nbsp; &nbsp;
-        <input type="button" value=管理员管理     onclick="guanli()">&nbsp; &nbsp;&nbsp; &nbsp;
-        <input type="button" value=考勤时间段设置  onclick="timeset()">
+        <input type="button" value=基础信息管理   onclick="jichu()" style="background-color:#2cc2fa;
+		color:#fff; box-shadow:0px 1px 2px rgba(0,0,0,0.2);width: 150px;height: 35px">&nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="button" value=管理员管理     onclick="guanli()" style="background-color:#2cc2fa;
+		color:#fff; box-shadow:0px 1px 2px rgba(0,0,0,0.2);width: 150px;height: 35px;margin-left: -34px">&nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="button" value=考勤时间段设置  onclick="timeset()" style="background-color:#2cc2fa;
+		color:#fff; box-shadow:0px 1px 2px rgba(0,0,0,0.2);width: 150px;height: 35px;margin-left: -34px">
     </div>
   	<div id="chance">
   		
   	 <!-- <input type="button" value="切换界面" onclick="refreshTime() "> -->
-  		<input type="button" value="添加用户" onclick="show()"> 
+  		<input type="button" value="添加用户" onclick="show()" style="background-color:#2cc2fa;
+		color:#fff; box-shadow:0px 1px 2px rgba(0,0,0,0.2);width: 100px;height: 25px"> 
 		<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
 		</div>
 
@@ -114,8 +118,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   </s:form>    
         
 		<div id="form">
-			<table border="1" cellpadding="8" cellspacing="1" width="700">
-				<tr align="center" bgcolor="silver">
+			<table border="1" cellpadding="8" cellspacing="1" width="1000">
+				<tr align="center" bgcolor="#F9F9F9">
 					<th>账号</th><th>所属学院</th><th>密码</th><th>操作</th><th>操作</th>
 				</tr>
 				<s:iterator value="#request.list" id="gly">
@@ -195,8 +199,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  	}
  	#selectAdmin1{
 		text-decoration: none;
-    	margin-left: 90px;
+    	margin-left: 120px;
     	margin-top: -25px;
+	}
+	#selectAdmin1_listName{
+		margin-left: -180px;
 	}
 	#selectAdmin1_adminName{
 		float: right;
@@ -208,6 +215,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		float: right;
     	margin-left: 180px;
     	margin-top: -29px;
+    	background-color: #2cc2fa;
+    	color: #fff;
+	}
+	#ThreeButton{
+		margin-top: 20px;
+		margin-left: 30px;
 	}
  </style>
   

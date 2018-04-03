@@ -6,7 +6,7 @@
 			
 			
 			<result name="success" >/school.jsp</result>
-			<result name="error">/test.jsp</result>
+			<result name="error">/login.jsp</result>
 		</action>
 		
 		
