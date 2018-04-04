@@ -144,5 +144,16 @@
 		<action name="updateKc" class="UpdateKc" method="updateKc">
 			<result name="success" type="chain">kcInfo</result>
 		</action>
+		
+		<!-- 关于Xs -->
+		<action name="getAllStuList" class="XsgetList" method="getAllStuList">
+			<result name="success">/wlwgc141.jsp</result>
+		</action>
+		<action name="studentAdmin" class="xsSelect" method="fromXsUsername">
+		<result name="success" type="chain">getAllStuList</result>
+		</action>
+		<action name="xsInfo" class="XsInfo" method="XsInfo">
+			<result name="success" type="chain">getAllCouList</result>
+		</action>
 	</package>
 </struts>    

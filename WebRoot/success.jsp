@@ -99,9 +99,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	 <!-- <input type="button" value="切换界面" onclick="refreshTime() "> -->
   		<input type="button" value="添加用户" onclick="show()"> 
 		<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
-		</div>
-
- 	
+		</div> 	
          <s:form  action="selectAdmin1"  method="post" >
 
 		    <s:select   

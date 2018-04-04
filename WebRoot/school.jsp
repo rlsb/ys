@@ -14,11 +14,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/school.css">
 	<script type="text/javascript"> 
-	    function admin() 
+	/*     function admin() 
 	{ 	//window.location.reload();
 	    //var dateObj = new Date(); 
 	    document.getElementById("context").innerHTML="<iframe src='success.jsp'   height=100% width=100%></iframe>";
 		//time.innerHTML = hello; //刷新div里面的内容 	
+	}  */
+	function zjshuren() 
+	{ 	
+	    document.getElementById("context").innerHTML="<iframe src='zjshuren.jsp'   height=100% width=100% frameborder=0></iframe>";
+	} 
+	function xxfaculty() 
+	{ 	
+	    document.getElementById("context").innerHTML="<iframe src='xxfaculty.jsp'   height=100% width=100% frameborder=0></iframe>";
+	} 
+	function xxprofession() 
+	{ 	
+	    document.getElementById("context").innerHTML="<iframe src='xxprofession.jsp'   height=100% width=100% frameborder=0></iframe>";
 	} 
 	</script>
   </head>
@@ -27,12 +39,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="all">
     	<div id="left">
     		<img src="image/school.png" >
-    		<p>浙江树人大学</p>
+    		<a href="javascript:void(0);"  onclick ="zjshuren()"><p>浙江树人大学</p></a>
     		<nav class="navbar navbar-default" role="navigation" >
             <div class="navbar-header" >
-                <a class="navbar-brand" href="#" data-toggle="dropdown">信息科技学院</a>
+                <a class="navbar-brand" href="javascript:void(0);"  onclick ="xxfaculty()" data-toggle="dropdown">信息科技学院</a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">专业</a>
+                    <li><a  href="javascript:void(0);"  onclick ="xxprofession()" >专业</a>
                     </li>
                     <li class="grade"></li>
                     <li><a href="#">年级</a>
@@ -55,5 +67,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	</div>
             </div>
     </div>
+    
   </body>
 </html>
