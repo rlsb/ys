@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 		function w141() 
 		{ 	
-	    	document.getElementById("profession").innerHTML="<iframe src='getAllStuList'   height=100% width=100% frameborder=0></iframe>";
+	    	document.getElementById("profession").innerHTML="<iframe src='xsInfo.action'   height=100% width=100% frameborder=0></iframe>";
 		}
 		function w142() 
 		{ 	
@@ -74,8 +74,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			width:150px;
 			font-weight:bold;
 			color:#FFFFFF;
-			background-color:#bebebe;
+			background-color:#1890FF;
 			text-align:center;
+			line-height: 30px;
 			padding:4px;
 			text-decoration:none;
 			text-transform:uppercase;
@@ -107,6 +108,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			width:154px;
 			color:#fff;
 		}
-		
+		#nav ul li ul li a:active {
+			color:yellow;
+		}         /* 选定的链接 */
    </style>
 </html>

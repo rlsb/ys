@@ -40,7 +40,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
    	<div id="all">
-   	<input type="button" value="添加用户" onclick="show()"> 
+   	<input type="button" value="添加用户" onclick="show()" style="background-color:#2cc2fa;
+		color:#fff; box-shadow:0px 1px 2px rgba(0,0,0,0.2);width: 100px;height: 25px"> 
 		<div id="pic" style="border: 1;position: absolute;width: 200;height: 250; background:#00FF99;visibility: hidden">
 		</div>
    			<s:form  action="professionAdmin"  method="post" >
@@ -54,8 +55,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   </s:form>
 		   
 		   <div id="form">
-			<table border="1" cellpadding="8" cellspacing="1" width="700">
-				<tr align="center" bgcolor="silver">
+			<table border="1" cellpadding="8" cellspacing="1" width="1000">
+				<tr align="center" bgcolor="#F9F9F9">
 					<th>专业编号<th>专业名称</th><th>所属学院编号</th><th>操作</th><th>操作</th>
 				</tr>
 				<s:iterator value="#request.list" id="zy">
@@ -90,18 +91,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <style type="text/css">
  
   	#form{
-  		width:700px;
+  		
+  		width:1000px;
   		height:auto;
   		box-shadow: 10px 10px 5px #888888;
-  		
   	}
   	#form table,th,tr{
-		border: 1px solid white;	
+		border: 1px solid #DDDDDD;	
+		text-align: center;
 	}
 	#professionAdmin{
 		text-decoration: none;
-    	margin-left: 90px;
+    	margin-left: 120px;
     	margin-top: -25px;
+	}
+	#professionAdmin_listName1{
+		margin-left: -180px;
 	}
 	#professionAdmin_markProName{
 		float: right;
@@ -113,6 +118,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		float: right;
     	margin-left: 180px;
     	margin-top: -29px;
+    	background-color: #2cc2fa;
+    	color: #fff;
 	}
 	
   </style>

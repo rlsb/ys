@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	 
     		<div id="form">
 			<table border="1" cellpadding="8" cellspacing="1" width="700" >
-				<tr align="center" bgcolor="#bebebe" style="color:#fff">
+				<tr align="center" bgcolor="#2cc2fa" style="color:#fff">
 					<th>学号</th><th>姓名</th><th>性别</th><th>班级编号</th>
 				</tr>
 				<s:iterator value="#request.list" id="xs">

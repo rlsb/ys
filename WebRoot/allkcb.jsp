@@ -72,7 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <li>
                     <h2 class="obtain">信息科技学院<i></i></h2>
                     <div class="secondary">
-                        <h3 id="allkc">总体情况</h3>
+                        <h3 onclick="allqk()">总体情况</h3>
                         <h3>专业</h3>
                         <h3>年级</h3>
                         <h3>教师和课程</h3>
@@ -143,14 +143,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	</div>
             </div>
             <script type="text/javascript" src="js/echarts.js"></script>
-            <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
      <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         	var myChart = echarts.init(document.getElementById('main'));
     		// 指定图表的配置项和数据
             var  option = {
             		title: {
-			        text: '浙江树人大学学生签到情况',
+			        text: '信息科技学院学生签到情况',
 			        left: 'center',
 			        top: 20,
 			        textStyle: {
@@ -159,23 +158,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    },
 				    xAxis: {
 				        type: 'category',
-				        data: ['信息科技学院', '城建学院', '艺术学院', '生环学院', '家阳书院']
+				        data: ['物联网工程', '电子工程', '数字媒体工程', '计算机工程', '电子商务工程']
 				    },
 				    yAxis: {
 				        type: 'value'
 				    },
 				    series: [{
-				        data: [2320,1932, 1001, 1934, 900],
+				        data: [820, 932, 901, 934, 1290],
 				        type: 'line'
 				    }]
 				};
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option);
 		</script>
-        <script type="text/javascript">
-	    	$("#allkc").on("click", function(e){
-	    		window.location.href="allkcb.jsp";
-	    	})
-    </script>
+        
   </body>
 </html>
