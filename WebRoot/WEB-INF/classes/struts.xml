@@ -5,6 +5,7 @@
 		<action name="LoginAction" class="loginAction">
 			<result name="success" >/school.jsp</result>
 			<result name="error" >/login.jsp</result>
+
 		</action>
 		
 		

@@ -6,6 +6,55 @@ body{
 	font-family: "Microsoft YaHei";
 }
 
+#left {
+	width:13%;
+	height:100%;
+	background-color: #00284d;
+}
+#left img{
+	display:inline-block;
+	vertical-align:middle;
+	margin-left: 30px;
+	margin-top: 10px;  
+}
+#left p{
+	display: inline-block;
+    vertical-align: middle;
+	margin-left:10px;
+	margin-top:30px;
+	font-size:22px;
+	color: white; 
+}
+.navbar-default{
+	background-color: #1890ff  !important;
+	width:100%;
+    border-color: #1890ff ;
+	margin-top: 5px;
+	display: inline-block;
+	height: 10px !important;
+}
+
+.navbar-brand{
+	 width:100%;
+	 color: white !important;
+	 padding-left: 30px;
+	 font-size: 16px  !important;
+}
+
+.dropdown-menu{
+	background-color:black  !important;
+	width:250px;	
+}
+.dropdown-menu > li > a{
+	color: white !important;
+	padding-left: 30px;
+}
+.dropdown-menu > li > a:hover{
+	color: white !important;
+	background-color:#1890ff  !important;
+}
+>>>>>>> ef4c70bcddd5a83c065230029ada27f78d98ff56
+
 #top{
 	position:fixed;
 	top:0;
