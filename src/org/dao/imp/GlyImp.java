@@ -30,6 +30,7 @@ public class GlyImp extends HibernateDaoSupport implements GlyDao{
 		Transaction ts = session.beginTransaction();
 		System.out.println("1111111");
 		Query query=session.createQuery("from Glyxx where username=?");
+		
 		query.setParameter(0, gly);
 		Glyxx gl=(Glyxx) query.uniqueResult();
 		query.setMaxResults(1);
@@ -45,7 +46,7 @@ public class GlyImp extends HibernateDaoSupport implements GlyDao{
 		try{
 			Session session = getHibernateTemplate().getSessionFactory().openSession();
 			Transaction ts = session.beginTransaction();
-			Query query = session.createQuery("from Glyxx order by username");
+			Query query=session.createQuery("from Glyxx where username=?").setFirstResult(pageNow).setMaxResults(pageSize);
 			int firstResult = (pageNow-1)*pageSize;
 			query.setFirstResult(firstResult);
 			query.setMaxResults(pageSize);

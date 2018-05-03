@@ -114,6 +114,10 @@ public class ColAction extends ActionSupport{
 	public String XyInfo() throws Exception{
 		
 		List list = colService.findAll(pageNow, pageSize);
+		/*for(int i = 0;list.size();i++){
+			Xyxx xyxx = list.get(i); 
+			Xsxx xsxx = ;
+		}*/
 		Map request = (Map)ActionContext.getContext().get("request");
 		Pager page = new Pager(getPageNow(), colService.findXySize());
 		System.out.println(page.getPageNow()+" page");

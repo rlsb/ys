@@ -19,8 +19,6 @@ public class ClaAction extends ActionSupport{
 	private String markclassName;
 	//关于管理员查询	
 		private List<String> list2;
-		
-
 		public String getMarkclassName() {
 			return markclassName;
 		}

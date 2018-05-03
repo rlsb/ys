@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.resource.spi.work.Work;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import org.dao.GlyDao;
 import org.model.Glyxx;
 import org.service.GlyService;
 import org.tools.Pager;
@@ -44,7 +50,7 @@ public class GlyAction extends ActionSupport{
 		public void setUser(Glyxx user) {
 			this.user = user;
 		}
-		public String fromGlyUsername() throws Exception {
+		public void fromGlyUsername() throws Exception {
 			// TODO Auto-generated method stub
 				//glyService.find(gly)
 			System.out.println(listName.get(0)+" "+adminName);
@@ -53,12 +59,11 @@ public class GlyAction extends ActionSupport{
 				 user=glyService.find(adminName);
 				 Map request = (Map)ActionContext.getContext().get("request");
 				Pager page = new Pager(getPageNow(), glyService.findGlySize());
+				JSONArray jarr = new JSONArray();
+				/*List<Work> list = GlyDao.findAll();*/
 				System.out.println(page.getPageNow()+" page");
 				request.put("list", user);
-				if(user!=null){
-					return SUCCESS;
-				}else
-					return ERROR;
+				
 			}else if(listName.get(0).equals("按照所选学院查询")){
 				List list = glyService.findCollege(adminName, pageNow, pageSize);
 				Map request = (Map)ActionContext.getContext().get("request");
@@ -66,13 +71,9 @@ public class GlyAction extends ActionSupport{
 				System.out.println(page.getPageNow()+" page");
 				request.put("list", list);
 				request.put("page", page);
-				if(list!=null){
-					return SUCCESS;
-				}else
-					return ERROR;
+				
 			}
-			  else	
-				return ERROR;
+			 
 		}
 		public  String getList() throws Exception  {
 			// TODO Auto-generated method stub
